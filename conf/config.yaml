@@ -1,0 +1,43 @@
+defaults:
+  - _self_
+
+run_name: memtest
+output_dir: results/${run_name}
+overwrite: false
+log_level: INFO
+
+# Working set sizes in bytes
+sizes:
+  - 2048        #   2 KB
+  - 4096        #   4 KB
+  - 8192        #   8 KB
+  - 16384       #  16 KB
+  - 32768       #  32 KB
+  - 65536       #  64 KB
+  - 131072      # 128 KB
+  - 262144      # 256 KB
+  - 524288      # 512 KB
+  - 1048576     #   1 MB
+  - 2097152     #   2 MB
+  - 4194304     #   4 MB
+  - 8388608     #   8 MB
+  - 16777216    #  16 MB
+  - 33554432    #  32 MB
+  - 67108864    #  64 MB
+  - 134217728   # 128 MB
+
+# Minimum hops for pointer-chase (more = better precision, slower)
+n_hops_min: 50000
+
+# CUDA device IDs to benchmark (run sequentially to avoid interference)
+gpu_ids:
+  - 0
+  - 1
+
+# Path to compiled memtest binary
+binary: ./memtest
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null  # don't litter hydra config dirs

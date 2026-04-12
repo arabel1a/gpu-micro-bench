@@ -1,0 +1,80 @@
+{
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 2080 SUPER",
+    "sm": "sm_75",
+    "n_sms": 48,
+    "l2_kb": 4096
+  },
+  "tests": {
+    "LAT_WARM": [
+      {
+        "size_bytes": 2048,
+        "ca_ns": 31.56,
+        "cg_ns": 143.98,
+        "cs_ns": 29.41,
+        "cn_ns": 33.11,
+        "wall_ms": 0.5
+      },
+      {
+        "size_bytes": 65536,
+        "ca_ns": 66.78,
+        "cg_ns": 140.88,
+        "cs_ns": 54.25,
+        "cn_ns": 68.67,
+        "wall_ms": 21.7
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_ns": 116.97,
+        "cg_ns": 117.65,
+        "cs_ns": 227.11,
+        "cn_ns": 122.22,
+        "wall_ms": 2449.3
+      }
+    ],
+    "LAT_MULTI": [
+      {
+        "size_bytes": 2048,
+        "ca_ns": 20.7,
+        "cg_ns": 116.91,
+        "cs_ns": 20.59,
+        "cn_ns": 20.65,
+        "wall_ms": 3.6
+      },
+      {
+        "size_bytes": 65536,
+        "ca_ns": 58.06,
+        "cg_ns": 116.48,
+        "cs_ns": 50.08,
+        "cn_ns": 58.41,
+        "wall_ms": 5.7
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_ns": 116.62,
+        "cg_ns": 117.05,
+        "cs_ns": 117.0,
+        "cn_ns": 124.86,
+        "wall_ms": 9.5
+      }
+    ],
+    "BW_WARM": [
+      {
+        "size_bytes": 65536,
+        "ca_gbps": 28.05,
+        "cg_gbps": 32.1,
+        "cs_gbps": 32.35,
+        "cn_gbps": 31.6,
+        "wall_ms": 0.1
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_gbps": 658.32,
+        "cg_gbps": 666.35,
+        "cs_gbps": 717.02,
+        "cn_gbps": 602.91,
+        "wall_ms": 0.3
+      }
+    ]
+  }
+}

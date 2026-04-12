@@ -1,0 +1,80 @@
+{
+  "gpu": {
+    "name": "NVIDIA CMP 90HX",
+    "sm": "sm_86",
+    "n_sms": 50,
+    "l2_kb": 2560
+  },
+  "tests": {
+    "LAT_WARM": [
+      {
+        "size_bytes": 2048,
+        "ca_ns": 30.0,
+        "cg_ns": 147.0,
+        "cs_ns": 28.5,
+        "cn_ns": 34.91,
+        "wall_ms": 0.5
+      },
+      {
+        "size_bytes": 65536,
+        "ca_ns": 26.56,
+        "cg_ns": 141.58,
+        "cs_ns": 26.56,
+        "cn_ns": 30.69,
+        "wall_ms": 14.8
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_ns": 231.01,
+        "cg_ns": 231.88,
+        "cs_ns": 233.31,
+        "cn_ns": 231.22,
+        "wall_ms": 3889.9
+      }
+    ],
+    "LAT_MULTI": [
+      {
+        "size_bytes": 2048,
+        "ca_ns": 22.32,
+        "cg_ns": 142.44,
+        "cs_ns": 22.22,
+        "cn_ns": 22.36,
+        "wall_ms": 4.2
+      },
+      {
+        "size_bytes": 65536,
+        "ca_ns": 33.89,
+        "cg_ns": 139.57,
+        "cs_ns": 33.89,
+        "cn_ns": 34.23,
+        "wall_ms": 4.8
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_ns": 238.75,
+        "cg_ns": 239.97,
+        "cs_ns": 239.0,
+        "cn_ns": 239.41,
+        "wall_ms": 19.1
+      }
+    ],
+    "BW_WARM": [
+      {
+        "size_bytes": 65536,
+        "ca_gbps": 26.81,
+        "cg_gbps": 29.3,
+        "cs_gbps": 27.83,
+        "cn_gbps": 28.97,
+        "wall_ms": 0.1
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_gbps": 427.5,
+        "cg_gbps": 435.74,
+        "cs_gbps": 445.22,
+        "cn_gbps": 423.63,
+        "wall_ms": 0.4
+      }
+    ]
+  }
+}

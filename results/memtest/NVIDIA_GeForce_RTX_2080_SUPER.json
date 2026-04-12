@@ -1,0 +1,384 @@
+{
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 2080 SUPER",
+    "sm": "sm_75",
+    "n_sms": 48,
+    "l2_kb": 4096
+  },
+  "tests": {
+    "LAT_WARM": [
+      {
+        "size_bytes": 2048,
+        "ca_ns": 24.51,
+        "cg_ns": 142.06,
+        "cs_ns": 24.46,
+        "cn_ns": 24.54,
+        "wall_ms": 10.8
+      },
+      {
+        "size_bytes": 4096,
+        "ca_ns": 24.57,
+        "cg_ns": 139.89,
+        "cs_ns": 24.58,
+        "cn_ns": 24.76,
+        "wall_ms": 10.7
+      },
+      {
+        "size_bytes": 8192,
+        "ca_ns": 24.89,
+        "cg_ns": 140.75,
+        "cs_ns": 24.9,
+        "cn_ns": 25.23,
+        "wall_ms": 10.8
+      },
+      {
+        "size_bytes": 16384,
+        "ca_ns": 25.48,
+        "cg_ns": 140.78,
+        "cs_ns": 25.52,
+        "cn_ns": 26.14,
+        "wall_ms": 10.9
+      },
+      {
+        "size_bytes": 32768,
+        "ca_ns": 26.67,
+        "cg_ns": 141.03,
+        "cs_ns": 26.69,
+        "cn_ns": 27.96,
+        "wall_ms": 11.1
+      },
+      {
+        "size_bytes": 65536,
+        "ca_ns": 66.15,
+        "cg_ns": 140.64,
+        "cs_ns": 54.12,
+        "cn_ns": 67.86,
+        "wall_ms": 21.5
+      },
+      {
+        "size_bytes": 131072,
+        "ca_ns": 118.67,
+        "cg_ns": 122.94,
+        "cs_ns": 84.17,
+        "cn_ns": 99.95,
+        "wall_ms": 55.8
+      },
+      {
+        "size_bytes": 262144,
+        "ca_ns": 108.3,
+        "cg_ns": 115.96,
+        "cs_ns": 101.49,
+        "cn_ns": 109.97,
+        "wall_ms": 114.2
+      },
+      {
+        "size_bytes": 524288,
+        "ca_ns": 112.2,
+        "cg_ns": 115.96,
+        "cs_ns": 109.52,
+        "cn_ns": 114.05,
+        "wall_ms": 236.8
+      },
+      {
+        "size_bytes": 1048576,
+        "ca_ns": 114.12,
+        "cg_ns": 115.95,
+        "cs_ns": 113.19,
+        "cn_ns": 115.97,
+        "wall_ms": 481.5
+      },
+      {
+        "size_bytes": 2097152,
+        "ca_ns": 119.26,
+        "cg_ns": 115.94,
+        "cs_ns": 172.1,
+        "cn_ns": 116.9,
+        "wall_ms": 1099.4
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_ns": 117.21,
+        "cg_ns": 118.32,
+        "cs_ns": 227.58,
+        "cn_ns": 123.26,
+        "wall_ms": 2459.4
+      },
+      {
+        "size_bytes": 8388608,
+        "ca_ns": 197.22,
+        "cg_ns": 197.7,
+        "cs_ns": 231.35,
+        "cn_ns": 197.41,
+        "wall_ms": 6909.5
+      },
+      {
+        "size_bytes": 16777216,
+        "ca_ns": 218.57,
+        "cg_ns": 218.57,
+        "cs_ns": 232.87,
+        "cn_ns": 219.56,
+        "wall_ms": 14924.3
+      },
+      {
+        "size_bytes": 33554432,
+        "ca_ns": 228.05,
+        "cg_ns": 228.13,
+        "cs_ns": 234.57,
+        "cn_ns": 228.09,
+        "wall_ms": 30831.4
+      },
+      {
+        "size_bytes": 67108864,
+        "ca_ns": 235.26,
+        "cg_ns": 235.3,
+        "cs_ns": 238.53,
+        "cn_ns": 235.27,
+        "wall_ms": 63374.7
+      },
+      {
+        "size_bytes": 134217728,
+        "ca_ns": 238.24,
+        "cg_ns": 238.25,
+        "cs_ns": 239.88,
+        "cn_ns": 238.23,
+        "wall_ms": 128123.6
+      }
+    ],
+    "LAT_MULTI": [
+      {
+        "size_bytes": 2048,
+        "ca_ns": 20.97,
+        "cg_ns": 119.17,
+        "cs_ns": 20.89,
+        "cn_ns": 21.0,
+        "wall_ms": 3.6
+      },
+      {
+        "size_bytes": 4096,
+        "ca_ns": 21.18,
+        "cg_ns": 117.64,
+        "cs_ns": 21.12,
+        "cn_ns": 21.29,
+        "wall_ms": 3.6
+      },
+      {
+        "size_bytes": 8192,
+        "ca_ns": 21.82,
+        "cg_ns": 118.33,
+        "cs_ns": 21.78,
+        "cn_ns": 21.95,
+        "wall_ms": 3.7
+      },
+      {
+        "size_bytes": 16384,
+        "ca_ns": 23.03,
+        "cg_ns": 118.27,
+        "cs_ns": 23.03,
+        "cn_ns": 23.16,
+        "wall_ms": 3.7
+      },
+      {
+        "size_bytes": 32768,
+        "ca_ns": 25.52,
+        "cg_ns": 118.47,
+        "cs_ns": 25.57,
+        "cn_ns": 25.73,
+        "wall_ms": 3.9
+      },
+      {
+        "size_bytes": 65536,
+        "ca_ns": 58.35,
+        "cg_ns": 118.11,
+        "cs_ns": 50.34,
+        "cn_ns": 58.87,
+        "wall_ms": 5.7
+      },
+      {
+        "size_bytes": 131072,
+        "ca_ns": 100.38,
+        "cg_ns": 118.27,
+        "cs_ns": 90.39,
+        "cn_ns": 100.76,
+        "wall_ms": 8.2
+      },
+      {
+        "size_bytes": 262144,
+        "ca_ns": 110.79,
+        "cg_ns": 118.27,
+        "cs_ns": 107.31,
+        "cn_ns": 111.45,
+        "wall_ms": 9.0
+      },
+      {
+        "size_bytes": 524288,
+        "ca_ns": 114.8,
+        "cg_ns": 118.57,
+        "cs_ns": 113.98,
+        "cn_ns": 116.08,
+        "wall_ms": 9.3
+      },
+      {
+        "size_bytes": 1048576,
+        "ca_ns": 116.63,
+        "cg_ns": 118.31,
+        "cs_ns": 116.63,
+        "cn_ns": 118.57,
+        "wall_ms": 9.4
+      },
+      {
+        "size_bytes": 2097152,
+        "ca_ns": 117.56,
+        "cg_ns": 118.27,
+        "cs_ns": 117.62,
+        "cn_ns": 121.73,
+        "wall_ms": 9.5
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_ns": 118.68,
+        "cg_ns": 119.03,
+        "cs_ns": 118.9,
+        "cn_ns": 127.19,
+        "wall_ms": 9.7
+      },
+      {
+        "size_bytes": 8388608,
+        "ca_ns": 201.1,
+        "cg_ns": 201.63,
+        "cs_ns": 201.0,
+        "cn_ns": 202.74,
+        "wall_ms": 16.1
+      },
+      {
+        "size_bytes": 16777216,
+        "ca_ns": 223.51,
+        "cg_ns": 223.54,
+        "cs_ns": 223.39,
+        "cn_ns": 223.77,
+        "wall_ms": 17.9
+      },
+      {
+        "size_bytes": 33554432,
+        "ca_ns": 232.35,
+        "cg_ns": 232.45,
+        "cs_ns": 232.65,
+        "cn_ns": 232.65,
+        "wall_ms": 18.6
+      },
+      {
+        "size_bytes": 67108864,
+        "ca_ns": 239.15,
+        "cg_ns": 238.69,
+        "cs_ns": 238.7,
+        "cn_ns": 238.76,
+        "wall_ms": 19.1
+      },
+      {
+        "size_bytes": 134217728,
+        "ca_ns": 241.47,
+        "cg_ns": 241.94,
+        "cs_ns": 241.16,
+        "cn_ns": 241.93,
+        "wall_ms": 19.3
+      }
+    ],
+    "BW_WARM": [
+      {
+        "size_bytes": 65536,
+        "ca_gbps": 29.09,
+        "cg_gbps": 31.22,
+        "cs_gbps": 29.85,
+        "cn_gbps": 29.77,
+        "wall_ms": 0.1
+      },
+      {
+        "size_bytes": 131072,
+        "ca_gbps": 60.15,
+        "cg_gbps": 62.53,
+        "cs_gbps": 63.21,
+        "cn_gbps": 61.41,
+        "wall_ms": 0.1
+      },
+      {
+        "size_bytes": 262144,
+        "ca_gbps": 120.65,
+        "cg_gbps": 123.19,
+        "cs_gbps": 125.07,
+        "cn_gbps": 121.0,
+        "wall_ms": 0.1
+      },
+      {
+        "size_bytes": 524288,
+        "ca_gbps": 237.11,
+        "cg_gbps": 249.38,
+        "cs_gbps": 241.65,
+        "cn_gbps": 230.11,
+        "wall_ms": 0.1
+      },
+      {
+        "size_bytes": 1048576,
+        "ca_gbps": 414.78,
+        "cg_gbps": 400.1,
+        "cs_gbps": 427.78,
+        "cn_gbps": 367.35,
+        "wall_ms": 0.1
+      },
+      {
+        "size_bytes": 2097152,
+        "ca_gbps": 602.35,
+        "cg_gbps": 606.25,
+        "cs_gbps": 674.93,
+        "cn_gbps": 532.38,
+        "wall_ms": 0.1
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_gbps": 673.89,
+        "cg_gbps": 675.28,
+        "cs_gbps": 736.77,
+        "cn_gbps": 605.13,
+        "wall_ms": 0.3
+      },
+      {
+        "size_bytes": 8388608,
+        "ca_gbps": 410.37,
+        "cg_gbps": 408.83,
+        "cs_gbps": 417.76,
+        "cn_gbps": 404.79,
+        "wall_ms": 0.8
+      },
+      {
+        "size_bytes": 16777216,
+        "ca_gbps": 426.39,
+        "cg_gbps": 424.94,
+        "cs_gbps": 433.44,
+        "cn_gbps": 425.04,
+        "wall_ms": 1.6
+      },
+      {
+        "size_bytes": 33554432,
+        "ca_gbps": 429.39,
+        "cg_gbps": 430.1,
+        "cs_gbps": 442.81,
+        "cn_gbps": 428.51,
+        "wall_ms": 3.1
+      },
+      {
+        "size_bytes": 67108864,
+        "ca_gbps": 420.1,
+        "cg_gbps": 418.41,
+        "cs_gbps": 434.62,
+        "cn_gbps": 419.55,
+        "wall_ms": 6.3
+      },
+      {
+        "size_bytes": 134217728,
+        "ca_gbps": 398.16,
+        "cg_gbps": 398.61,
+        "cs_gbps": 412.81,
+        "cn_gbps": 394.84,
+        "wall_ms": 13.4
+      }
+    ]
+  }
+}

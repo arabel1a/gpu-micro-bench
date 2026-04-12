@@ -1,0 +1,16 @@
+defaults:
+  - config
+  - _self_
+
+run_name: smoke
+
+sizes:
+  - 2048
+  - 65536
+  - 4194304
+
+n_hops_min: 1000
+
+gpu_ids:
+  - 0
+  - 1
