@@ -1,31 +1,51 @@
 NVCC = nvcc
-ARCH = -gencode arch=compute_75,code=sm_75 \
-       -gencode arch=compute_80,code=sm_80 \
-       -gencode arch=compute_86,code=sm_86
-FLAGS = -O3 $(ARCH) -Xcompiler -fopenmp -lgomp
+ARCHS = 75 80 86
+GENCODE = $(foreach a,$(ARCHS),-gencode arch=compute_$(a),code=sm_$(a))
+FLAGS = -O3 $(GENCODE) -Xcompiler -fopenmp -lgomp
 
-all: bin/memtest bin/mmvq_bench bin/arithmtest bin/arithmtest_gen
+SRC = memtest mmvq_bench arithmtest arithmtest_gen
 
-bin/memtest: src/memtest.cu | bin
+all: $(addprefix bin/,$(SRC)) bin/mmvq_bench_nodp4a bin/mmvq_bench_dp2a ptx
+
+# ---- binaries ----
+bin/%: src/%.cu | bin
 	$(NVCC) $(FLAGS) -o $@ $<
 
-bin/mmvq_bench: src/mmvq_bench.cu | bin
-	$(NVCC) $(FLAGS) -o $@ $<
+bin/mmvq_bench_nodp4a: src/mmvq_bench.cu | bin
+	$(NVCC) $(FLAGS) -DDISABLE_DP4A -o $@ $<
 
-bin/arithmtest: src/arithmtest.cu | bin
-	$(NVCC) $(FLAGS) -o $@ $<
+bin/mmvq_bench_dp2a: src/mmvq_bench.cu | bin
+	$(NVCC) $(FLAGS) -DDP4A_REPL_DP2A -o $@ $<
 
-bin/arithmtest_gen: src/arithmtest_gen.cu | bin
-	$(NVCC) $(FLAGS) -o $@ $<
+# ---- PTX targets ----
+# Generate explicit rules for each (source, arch) pair
+define ptx_rule
+ptx_dump/$(1)_sm$(2).ptx: src/$(1).cu | ptx_dump
+	$(NVCC) -O3 -gencode arch=compute_$(2),code=compute_$(2) -ptx -o $$@ $$<
+endef
 
-# Regenerate the comprehensive benchmark from instruction definitions
-gen: gen_arithm.py
-	python gen_arithm.py --gen-only
+# Create all PTX targets and their rules
+PTX_TARGETS :=
+$(foreach s,$(SRC),\
+  $(foreach a,$(ARCHS),\
+    $(eval $(call ptx_rule,$(s),$(a)))\
+    $(eval PTX_TARGETS += ptx_dump/$(s)_sm$(a).ptx)\
+  )\
+)
 
+ptx: $(PTX_TARGETS)
+
+# directories
 bin:
 	mkdir -p bin
 
-clean:
-	rm -f bin/memtest bin/mmvq_bench bin/arithmtest bin/arithmtest_gen
+ptx_dump:
+	mkdir -p ptx_dump
 
-.PHONY: all clean gen
+# misc
+gen: gen_arithm.py
+	python gen_arithm.py --gen-only
+
+clean:
+	rm -f bin/* ptx_dump/*
+	

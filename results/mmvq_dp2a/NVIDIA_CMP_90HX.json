@@ -1,0 +1,95 @@
+{
+  "gpu": {
+    "name": "NVIDIA CMP 90HX",
+    "sm": "sm_86",
+    "n_sms": 50,
+    "l2_kb": 2560
+  },
+  "layers": [
+    {
+      "name": "q_proj",
+      "nrows": 4096,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 574.7,
+      "us_per_call": 17.96,
+      "weight_mb": 2.25,
+      "eff_bw_gbps": 122.35
+    },
+    {
+      "name": "k_proj",
+      "nrows": 1024,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 202.4,
+      "us_per_call": 6.33,
+      "weight_mb": 0.56,
+      "eff_bw_gbps": 86.84
+    },
+    {
+      "name": "v_proj",
+      "nrows": 1024,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 193.4,
+      "us_per_call": 6.04,
+      "weight_mb": 0.56,
+      "eff_bw_gbps": 90.91
+    },
+    {
+      "name": "o_proj",
+      "nrows": 4096,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 543.9,
+      "us_per_call": 17.0,
+      "weight_mb": 2.25,
+      "eff_bw_gbps": 129.28
+    },
+    {
+      "name": "gate_proj",
+      "nrows": 12288,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 1572.6,
+      "us_per_call": 49.14,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 134.13
+    },
+    {
+      "name": "up_proj",
+      "nrows": 12288,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 1575.6,
+      "us_per_call": 49.24,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 133.88
+    },
+    {
+      "name": "down_proj",
+      "nrows": 4096,
+      "ncols": 12288,
+      "count": 32,
+      "us_per_token": 1426.8,
+      "us_per_call": 44.59,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 147.84
+    },
+    {
+      "name": "lm_head",
+      "nrows": 151669,
+      "ncols": 4096,
+      "count": 1,
+      "us_per_token": 575.9,
+      "us_per_call": 575.91,
+      "weight_mb": 83.31,
+      "eff_bw_gbps": 141.28
+    }
+  ],
+  "summary": {
+    "us_per_token": 6665.2,
+    "equiv_tps": 150.03,
+    "total_weight_mb": 911.31
+  }
+}

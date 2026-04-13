@@ -38,7 +38,7 @@ def fmt_size(b: int) -> str:
 
 def short_name(name: str) -> str:
     return (name.replace("NVIDIA ", "").replace("GeForce ", "")
-            .replace("RTX ", "").replace("SUPER", "S").replace(" ", ""))
+            .replace("RTX ", "").replace("SUPER", "S").replace(" ", "").replace("GraphicsDevice", "CMP170HX"))
 
 
 def load_results(results_dir: Path) -> list[dict]:
@@ -518,13 +518,16 @@ def write_mmvq_md(f, gpus):
 # Markdown tables + plots — arithm
 # ============================================================
 
-def write_arithm_md(f, gpus):
+def write_arithm_md(f, gpus, baseline):
     f.write("# Arithmetic Instruction Throughput Benchmark Results\n\n")
     f.write("1 block, 128 threads (4 warps), 8 independent chains (tput) or 1 chain (lat).\n\n")
 
     # Per-GPU tables
-    for gpu in gpus:
-        name = gpu["gpu"]["name"]
+    baseline_idx=0
+    for i, gpu in enumerate(gpus):
+        name = short_name(gpu["gpu"]["name"])
+        if name == baseline:
+            baseline_idx = i
         f.write(f"\n## {name} ({gpu['gpu']['sm']}, {gpu['gpu']['n_sms']} SMs)\n\n")
         f.write("| Op | Mode | ns/op | ops/ns | wall ms |\n")
         f.write("|----|------|-------|--------|--------|\n")
@@ -540,9 +543,7 @@ def write_arithm_md(f, gpus):
         names = [short_name(g["gpu"]["name"]) for g in gpus]
         ops = sorted(set(t["op"] for t in gpus[0]["tests"]))
 
-        headers = ["Op"] + [f"{n} ns/op" for n in names]
-        if len(gpus) == 2:
-            headers.append("ratio")
+        headers = ["Op"] + [f"{n} ns/op" for n in names] + [f"{n} ratio" for n in names if n != baseline] 
         f.write("| " + " | ".join(headers) + " |\n")
         f.write("|" + "|".join(["---"] * len(headers)) + "|\n")
 
@@ -554,10 +555,11 @@ def write_arithm_md(f, gpus):
             row = [op]
             for v in vals:
                 row.append(f"{v:.3f}" if v else "—")
-            if len(gpus) == 2 and all(v is not None for v in vals):
-                row.append(f"{vals[0]/vals[1]:.1f}x")
+            for i, v in enumerate(vals):
+                if i == baseline_idx:
+                    continue
+                row.append(f"{v/vals[baseline_idx]:.1f}x" if v is not None and vals[baseline_idx] is not None else "-")
             f.write("| " + " | ".join(row) + " |\n")
-
 
 def plot_arithm_bars(gpus, plot_dir):
     """Bar chart: ns/op per instruction, grouped by GPU."""
@@ -683,7 +685,7 @@ def run_arithm_plots(cfg: DictConfig):
 
     md_path = results_dir / "results.md"
     with open(md_path, "w") as f:
-        write_arithm_md(f, gpus)
+        write_arithm_md(f, gpus, cfg.baseline)
     log.info("Markdown saved to %s", md_path)
 
 

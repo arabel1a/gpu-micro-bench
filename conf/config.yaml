@@ -6,9 +6,9 @@ run_name: ${bench.name}
 output_dir: results/${run_name}
 overwrite: false
 
+baseline: 2080S
 gpu_ids:
   - 0
-  - 1
 
 hydra:
   run:
