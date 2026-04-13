@@ -10,31 +10,13 @@
       "op": "fadd",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 1595843.6,
-      "ns_per_op": 1.995,
-      "ops_per_ns": 0.5013,
-      "wall_ms": 79.8
+      "total_ns": 1317846.5,
+      "ns_per_op": 1.647,
+      "ops_per_ns": 0.6071,
+      "wall_ms": 65.9
     },
     {
       "op": "fadd",
-      "mode": "lat",
-      "n_iters": 100000,
-      "total_ns": 2744893.1,
-      "ns_per_op": 3.431,
-      "ops_per_ns": 0.2915,
-      "wall_ms": 137.2
-    },
-    {
-      "op": "fmul",
-      "mode": "tput",
-      "n_iters": 100000,
-      "total_ns": 1330707.9,
-      "ns_per_op": 1.663,
-      "ops_per_ns": 0.6012,
-      "wall_ms": 66.5
-    },
-    {
-      "op": "fmul",
       "mode": "lat",
       "n_iters": 100000,
       "total_ns": 2434848.1,
@@ -43,37 +25,55 @@
       "wall_ms": 121.7
     },
     {
+      "op": "fmul",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 1317723.5,
+      "ns_per_op": 1.647,
+      "ops_per_ns": 0.6071,
+      "wall_ms": 65.9
+    },
+    {
+      "op": "fmul",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 2434602.3,
+      "ns_per_op": 3.043,
+      "ops_per_ns": 0.3286,
+      "wall_ms": 121.7
+    },
+    {
       "op": "ffma",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 36318347.9,
-      "ns_per_op": 45.398,
+      "total_ns": 36324218.8,
+      "ns_per_op": 45.405,
       "ops_per_ns": 0.022,
-      "wall_ms": 1815.9
+      "wall_ms": 1816.2
     },
     {
       "op": "ffma",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 36319809.0,
-      "ns_per_op": 45.4,
+      "total_ns": 36317844.4,
+      "ns_per_op": 45.397,
       "ops_per_ns": 0.022,
-      "wall_ms": 1816.0
+      "wall_ms": 1815.9
     },
     {
       "op": "hadd2",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 1317969.3,
+      "total_ns": 1317764.6,
       "ns_per_op": 1.647,
-      "ops_per_ns": 0.607,
+      "ops_per_ns": 0.6071,
       "wall_ms": 65.9
     },
     {
       "op": "hadd2",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 2399538.3,
+      "total_ns": 2399190.4,
       "ns_per_op": 2.999,
       "ops_per_ns": 0.3334,
       "wall_ms": 120.0
@@ -82,16 +82,16 @@
       "op": "hmul2",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 821431.9,
+      "total_ns": 821288.5,
       "ns_per_op": 1.027,
-      "ops_per_ns": 0.9739,
+      "ops_per_ns": 0.9741,
       "wall_ms": 41.1
     },
     {
       "op": "hmul2",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 4633581.6,
+      "total_ns": 4633376.6,
       "ns_per_op": 5.792,
       "ops_per_ns": 0.1727,
       "wall_ms": 231.7
@@ -100,43 +100,43 @@
       "op": "hfma2",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 1424240.8,
+      "total_ns": 1423954.1,
       "ns_per_op": 1.78,
-      "ops_per_ns": 0.5617,
+      "ops_per_ns": 0.5618,
       "wall_ms": 71.2
     },
     {
       "op": "hfma2",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 2488176.3,
+      "total_ns": 2487828.7,
       "ns_per_op": 3.11,
-      "ops_per_ns": 0.3215,
+      "ops_per_ns": 0.3216,
       "wall_ms": 124.4
     },
     {
       "op": "iadd",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 520069.0,
+      "total_ns": 519741.4,
       "ns_per_op": 0.65,
-      "ops_per_ns": 1.5383,
+      "ops_per_ns": 1.5392,
       "wall_ms": 26.0
     },
     {
       "op": "iadd",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 484495.5,
-      "ns_per_op": 0.606,
-      "ops_per_ns": 1.6512,
+      "total_ns": 484311.1,
+      "ns_per_op": 0.605,
+      "ops_per_ns": 1.6518,
       "wall_ms": 24.2
     },
     {
       "op": "imad",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 1477488.3,
+      "total_ns": 1477283.5,
       "ns_per_op": 1.847,
       "ops_per_ns": 0.5415,
       "wall_ms": 73.9
@@ -145,7 +145,7 @@
       "op": "imad",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 2576651.1,
+      "total_ns": 2576548.8,
       "ns_per_op": 3.221,
       "ops_per_ns": 0.3105,
       "wall_ms": 128.8
@@ -154,115 +154,115 @@
       "op": "dp4a",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 36325851.4,
-      "ns_per_op": 45.407,
+      "total_ns": 36318096.2,
+      "ns_per_op": 45.398,
       "ops_per_ns": 0.022,
-      "wall_ms": 1816.3
+      "wall_ms": 1815.9
     },
     {
       "op": "dp4a",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 36319561.0,
-      "ns_per_op": 45.399,
+      "total_ns": 36318378.4,
+      "ns_per_op": 45.398,
       "ops_per_ns": 0.022,
-      "wall_ms": 1816.0
+      "wall_ms": 1815.9
     },
     {
       "op": "shl",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 484577.4,
-      "ns_per_op": 0.606,
-      "ops_per_ns": 1.6509,
+      "total_ns": 484393.0,
+      "ns_per_op": 0.605,
+      "ops_per_ns": 1.6516,
       "wall_ms": 24.2
     },
     {
       "op": "shl",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 5836.8,
+      "total_ns": 5734.4,
       "ns_per_op": 0.007,
-      "ops_per_ns": 137.0614,
+      "ops_per_ns": 139.509,
       "wall_ms": 0.3
     },
     {
       "op": "shr",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 520068.9,
+      "total_ns": 519905.1,
       "ns_per_op": 0.65,
-      "ops_per_ns": 1.5383,
+      "ops_per_ns": 1.5387,
       "wall_ms": 26.0
     },
     {
       "op": "shr",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 484536.4,
-      "ns_per_op": 0.606,
-      "ops_per_ns": 1.6511,
+      "total_ns": 484229.2,
+      "ns_per_op": 0.605,
+      "ops_per_ns": 1.6521,
       "wall_ms": 24.2
     },
     {
       "op": "band",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 520007.6,
+      "total_ns": 519864.3,
       "ns_per_op": 0.65,
-      "ops_per_ns": 1.5384,
+      "ops_per_ns": 1.5389,
       "wall_ms": 26.0
     },
     {
       "op": "band",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 484556.9,
-      "ns_per_op": 0.606,
-      "ops_per_ns": 1.651,
+      "total_ns": 484352.1,
+      "ns_per_op": 0.605,
+      "ops_per_ns": 1.6517,
       "wall_ms": 24.2
     },
     {
       "op": "bor",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 519946.1,
+      "total_ns": 519884.7,
       "ns_per_op": 0.65,
-      "ops_per_ns": 1.5386,
+      "ops_per_ns": 1.5388,
       "wall_ms": 26.0
     },
     {
       "op": "bor",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 484618.3,
-      "ns_per_op": 0.606,
-      "ops_per_ns": 1.6508,
+      "total_ns": 484331.6,
+      "ns_per_op": 0.605,
+      "ops_per_ns": 1.6518,
       "wall_ms": 24.2
     },
     {
       "op": "bxor",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 520007.6,
+      "total_ns": 519925.7,
       "ns_per_op": 0.65,
-      "ops_per_ns": 1.5384,
+      "ops_per_ns": 1.5387,
       "wall_ms": 26.0
     },
     {
       "op": "bxor",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 484556.9,
-      "ns_per_op": 0.606,
-      "ops_per_ns": 1.651,
+      "total_ns": 484393.0,
+      "ns_per_op": 0.605,
+      "ops_per_ns": 1.6516,
       "wall_ms": 24.2
     },
     {
       "op": "lop3",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 1406464.0,
+      "total_ns": 1406525.3,
       "ns_per_op": 1.758,
       "ops_per_ns": 0.5688,
       "wall_ms": 70.3
@@ -271,7 +271,7 @@
       "op": "lop3",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 2488196.8,
+      "total_ns": 2487971.8,
       "ns_per_op": 3.11,
       "ops_per_ns": 0.3215,
       "wall_ms": 124.4
@@ -280,16 +280,16 @@
       "op": "prmt",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 1424343.5,
+      "total_ns": 1424015.6,
       "ns_per_op": 1.78,
-      "ops_per_ns": 0.5617,
+      "ops_per_ns": 0.5618,
       "wall_ms": 71.2
     },
     {
       "op": "prmt",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 2523545.0,
+      "total_ns": 2523400.8,
       "ns_per_op": 3.154,
       "ops_per_ns": 0.317,
       "wall_ms": 126.2
@@ -298,52 +298,52 @@
       "op": "hmma_f16",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 145287918.1,
-      "ns_per_op": 181.61,
+      "total_ns": 145280944.8,
+      "ns_per_op": 181.601,
       "ops_per_ns": 0.0055,
-      "wall_ms": 7264.4
+      "wall_ms": 7264.0
     },
     {
       "op": "hmma_f16",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 145266403.2,
-      "ns_per_op": 181.583,
+      "total_ns": 145262802.1,
+      "ns_per_op": 181.579,
       "ops_per_ns": 0.0055,
-      "wall_ms": 7263.3
+      "wall_ms": 7263.1
     },
     {
       "op": "hmma_bf16",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 145282028.2,
-      "ns_per_op": 181.603,
+      "total_ns": 145280990.6,
+      "ns_per_op": 181.601,
       "ops_per_ns": 0.0055,
-      "wall_ms": 7264.1
+      "wall_ms": 7264.0
     },
     {
       "op": "hmma_bf16",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 145266403.2,
-      "ns_per_op": 181.583,
+      "total_ns": 145262741.1,
+      "ns_per_op": 181.578,
       "ops_per_ns": 0.0055,
-      "wall_ms": 7263.3
+      "wall_ms": 7263.1
     },
     {
       "op": "hmma_tf32",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 72637870.8,
-      "ns_per_op": 90.797,
+      "total_ns": 72631355.3,
+      "ns_per_op": 90.789,
       "ops_per_ns": 0.011,
-      "wall_ms": 3631.9
+      "wall_ms": 3631.6
     },
     {
       "op": "hmma_tf32",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 72631721.5,
+      "total_ns": 72632278.4,
       "ns_per_op": 90.79,
       "ops_per_ns": 0.011,
       "wall_ms": 3631.6
@@ -352,7 +352,7 @@
       "op": "imma_s8",
       "mode": "tput",
       "n_iters": 100000,
-      "total_ns": 72639061.0,
+      "total_ns": 72639282.2,
       "ns_per_op": 90.799,
       "ops_per_ns": 0.011,
       "wall_ms": 3632.0
@@ -361,10 +361,10 @@
       "op": "imma_s8",
       "mode": "lat",
       "n_iters": 100000,
-      "total_ns": 72640487.7,
-      "ns_per_op": 90.801,
+      "total_ns": 72631134.0,
+      "ns_per_op": 90.789,
       "ops_per_ns": 0.011,
-      "wall_ms": 3632.0
+      "wall_ms": 3631.6
     }
   ]
 }
