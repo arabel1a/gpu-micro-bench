@@ -1,0 +1,95 @@
+{
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 2080 SUPER",
+    "sm": "sm_75",
+    "n_sms": 48,
+    "l2_kb": 4096
+  },
+  "layers": [
+    {
+      "name": "q_proj",
+      "nrows": 4096,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 643.7,
+      "us_per_call": 20.12,
+      "weight_mb": 2.25,
+      "eff_bw_gbps": 109.23
+    },
+    {
+      "name": "k_proj",
+      "nrows": 1024,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 211.8,
+      "us_per_call": 6.62,
+      "weight_mb": 0.56,
+      "eff_bw_gbps": 83.0
+    },
+    {
+      "name": "v_proj",
+      "nrows": 1024,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 211.8,
+      "us_per_call": 6.62,
+      "weight_mb": 0.56,
+      "eff_bw_gbps": 82.98
+    },
+    {
+      "name": "o_proj",
+      "nrows": 4096,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 632.4,
+      "us_per_call": 19.76,
+      "weight_mb": 2.25,
+      "eff_bw_gbps": 111.18
+    },
+    {
+      "name": "gate_proj",
+      "nrows": 12288,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 1577.8,
+      "us_per_call": 49.31,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 133.69
+    },
+    {
+      "name": "up_proj",
+      "nrows": 12288,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 1506.5,
+      "us_per_call": 47.08,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 140.02
+    },
+    {
+      "name": "down_proj",
+      "nrows": 4096,
+      "ncols": 12288,
+      "count": 32,
+      "us_per_token": 1394.9,
+      "us_per_call": 43.59,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 151.23
+    },
+    {
+      "name": "lm_head",
+      "nrows": 151669,
+      "ncols": 4096,
+      "count": 1,
+      "us_per_token": 560.8,
+      "us_per_call": 560.77,
+      "weight_mb": 83.31,
+      "eff_bw_gbps": 145.09
+    }
+  ],
+  "summary": {
+    "us_per_token": 6739.7,
+    "equiv_tps": 148.38,
+    "total_weight_mb": 911.31
+  }
+}

@@ -9,375 +9,606 @@
     "LAT_WARM": [
       {
         "size_bytes": 2048,
-        "ca_ns": 24.51,
-        "cg_ns": 142.06,
-        "cs_ns": 24.46,
-        "cn_ns": 24.54,
-        "wall_ms": 10.8
+        "ca_ns": 24.41,
+        "cg_ns": 142.03,
+        "cs_ns": 24.35,
+        "cn_ns": null,
+        "wall_ms": 9.5
       },
       {
         "size_bytes": 4096,
-        "ca_ns": 24.57,
-        "cg_ns": 139.89,
-        "cs_ns": 24.58,
-        "cn_ns": 24.76,
-        "wall_ms": 10.7
+        "ca_ns": 24.39,
+        "cg_ns": 141.56,
+        "cs_ns": 24.37,
+        "cn_ns": null,
+        "wall_ms": 9.5
       },
       {
         "size_bytes": 8192,
-        "ca_ns": 24.89,
-        "cg_ns": 140.75,
-        "cs_ns": 24.9,
-        "cn_ns": 25.23,
-        "wall_ms": 10.8
+        "ca_ns": 24.46,
+        "cg_ns": 140.94,
+        "cs_ns": 24.49,
+        "cn_ns": null,
+        "wall_ms": 9.5
       },
       {
         "size_bytes": 16384,
-        "ca_ns": 25.48,
-        "cg_ns": 140.78,
-        "cs_ns": 25.52,
-        "cn_ns": 26.14,
-        "wall_ms": 10.9
+        "ca_ns": 24.62,
+        "cg_ns": 140.9,
+        "cs_ns": 24.61,
+        "cn_ns": null,
+        "wall_ms": 9.5
       },
       {
         "size_bytes": 32768,
-        "ca_ns": 26.67,
-        "cg_ns": 141.03,
-        "cs_ns": 26.69,
-        "cn_ns": 27.96,
-        "wall_ms": 11.1
+        "ca_ns": 24.9,
+        "cg_ns": 140.7,
+        "cs_ns": 24.93,
+        "cn_ns": null,
+        "wall_ms": 9.5
       },
       {
         "size_bytes": 65536,
-        "ca_ns": 66.15,
-        "cg_ns": 140.64,
-        "cs_ns": 54.12,
-        "cn_ns": 67.86,
-        "wall_ms": 21.5
+        "ca_ns": 69.26,
+        "cg_ns": 116.51,
+        "cs_ns": 44.78,
+        "cn_ns": 244.59,
+        "wall_ms": 12.2
       },
       {
         "size_bytes": 131072,
-        "ca_ns": 118.67,
-        "cg_ns": 122.94,
-        "cs_ns": 84.17,
-        "cn_ns": 99.95,
-        "wall_ms": 55.8
+        "ca_ns": 116.61,
+        "cg_ns": 116.52,
+        "cs_ns": 83.52,
+        "cn_ns": 239.15,
+        "wall_ms": 17.1
       },
       {
         "size_bytes": 262144,
-        "ca_ns": 108.3,
-        "cg_ns": 115.96,
-        "cs_ns": 101.49,
-        "cn_ns": 109.97,
-        "wall_ms": 114.2
+        "ca_ns": 116.53,
+        "cg_ns": 130.42,
+        "cs_ns": 103.09,
+        "cn_ns": 253.33,
+        "wall_ms": 20.1
       },
       {
         "size_bytes": 524288,
-        "ca_ns": 112.2,
-        "cg_ns": 115.96,
-        "cs_ns": 109.52,
-        "cn_ns": 114.05,
-        "wall_ms": 236.8
+        "ca_ns": 116.37,
+        "cg_ns": 116.08,
+        "cs_ns": 109.64,
+        "cn_ns": 235.29,
+        "wall_ms": 21.9
       },
       {
         "size_bytes": 1048576,
-        "ca_ns": 114.12,
-        "cg_ns": 115.95,
-        "cs_ns": 113.19,
-        "cn_ns": 115.97,
-        "wall_ms": 481.5
+        "ca_ns": 116.06,
+        "cg_ns": 116.01,
+        "cs_ns": 113.35,
+        "cn_ns": 234.83,
+        "wall_ms": 26.9
       },
       {
         "size_bytes": 2097152,
-        "ca_ns": 119.26,
-        "cg_ns": 115.94,
-        "cs_ns": 172.1,
-        "cn_ns": 116.9,
-        "wall_ms": 1099.4
+        "ca_ns": 116.0,
+        "cg_ns": 116.04,
+        "cs_ns": 115.16,
+        "cn_ns": 234.35,
+        "wall_ms": 42.0
       },
       {
         "size_bytes": 4194304,
-        "ca_ns": 117.21,
-        "cg_ns": 118.32,
-        "cs_ns": 227.58,
-        "cn_ns": 123.26,
-        "wall_ms": 2459.4
+        "ca_ns": 118.44,
+        "cg_ns": 120.24,
+        "cs_ns": 121.95,
+        "cn_ns": 234.35,
+        "wall_ms": 85.7
       },
       {
         "size_bytes": 8388608,
-        "ca_ns": 197.22,
-        "cg_ns": 197.7,
-        "cs_ns": 231.35,
-        "cn_ns": 197.41,
-        "wall_ms": 6909.5
+        "ca_ns": 234.16,
+        "cg_ns": 234.18,
+        "cs_ns": 233.89,
+        "cn_ns": 234.19,
+        "wall_ms": 260.8
       },
       {
         "size_bytes": 16777216,
-        "ca_ns": 218.57,
-        "cg_ns": 218.57,
-        "cs_ns": 232.87,
-        "cn_ns": 219.56,
-        "wall_ms": 14924.3
+        "ca_ns": 236.16,
+        "cg_ns": 234.16,
+        "cs_ns": 234.03,
+        "cn_ns": 234.21,
+        "wall_ms": 522.8
       },
       {
         "size_bytes": 33554432,
-        "ca_ns": 228.05,
-        "cg_ns": 228.13,
-        "cs_ns": 234.57,
-        "cn_ns": 228.09,
-        "wall_ms": 30831.4
+        "ca_ns": 235.15,
+        "cg_ns": 234.15,
+        "cs_ns": 235.08,
+        "cn_ns": 234.18,
+        "wall_ms": 1045.5
       },
       {
         "size_bytes": 67108864,
-        "ca_ns": 235.26,
-        "cg_ns": 235.3,
-        "cs_ns": 238.53,
-        "cn_ns": 235.27,
-        "wall_ms": 63374.7
+        "ca_ns": 236.26,
+        "cg_ns": 236.26,
+        "cs_ns": 236.26,
+        "cn_ns": 236.67,
+        "wall_ms": 2106.9
       },
       {
         "size_bytes": 134217728,
-        "ca_ns": 238.24,
-        "cg_ns": 238.25,
-        "cs_ns": 239.88,
-        "cn_ns": 238.23,
-        "wall_ms": 128123.6
+        "ca_ns": 237.77,
+        "cg_ns": 237.68,
+        "cs_ns": 237.72,
+        "cn_ns": 237.69,
+        "wall_ms": 4237.5
       }
     ],
     "LAT_MULTI": [
       {
         "size_bytes": 2048,
-        "ca_ns": 20.97,
-        "cg_ns": 119.17,
-        "cs_ns": 20.89,
-        "cn_ns": 21.0,
-        "wall_ms": 3.6
+        "ca_ns": 20.37,
+        "cg_ns": 117.67,
+        "cs_ns": 20.3,
+        "cn_ns": null,
+        "wall_ms": 3.2
       },
       {
         "size_bytes": 4096,
-        "ca_ns": 21.18,
-        "cg_ns": 117.64,
-        "cs_ns": 21.12,
-        "cn_ns": 21.29,
-        "wall_ms": 3.6
+        "ca_ns": 20.44,
+        "cg_ns": 117.04,
+        "cs_ns": 20.38,
+        "cn_ns": null,
+        "wall_ms": 3.2
       },
       {
         "size_bytes": 8192,
-        "ca_ns": 21.82,
-        "cg_ns": 118.33,
-        "cs_ns": 21.78,
-        "cn_ns": 21.95,
-        "wall_ms": 3.7
+        "ca_ns": 20.49,
+        "cg_ns": 116.46,
+        "cs_ns": 20.51,
+        "cn_ns": null,
+        "wall_ms": 3.1
       },
       {
         "size_bytes": 16384,
-        "ca_ns": 23.03,
-        "cg_ns": 118.27,
-        "cs_ns": 23.03,
-        "cn_ns": 23.16,
-        "wall_ms": 3.7
+        "ca_ns": 20.86,
+        "cg_ns": 116.53,
+        "cs_ns": 20.83,
+        "cn_ns": null,
+        "wall_ms": 3.2
       },
       {
         "size_bytes": 32768,
-        "ca_ns": 25.52,
-        "cg_ns": 118.47,
-        "cs_ns": 25.57,
-        "cn_ns": 25.73,
-        "wall_ms": 3.9
+        "ca_ns": 21.47,
+        "cg_ns": 116.34,
+        "cs_ns": 21.48,
+        "cn_ns": null,
+        "wall_ms": 3.2
       },
       {
         "size_bytes": 65536,
-        "ca_ns": 58.35,
-        "cg_ns": 118.11,
-        "cs_ns": 50.34,
-        "cn_ns": 58.87,
-        "wall_ms": 5.7
+        "ca_ns": 69.02,
+        "cg_ns": 116.48,
+        "cs_ns": 45.7,
+        "cn_ns": 136.59,
+        "wall_ms": 5.0
       },
       {
         "size_bytes": 131072,
-        "ca_ns": 100.38,
-        "cg_ns": 118.27,
-        "cs_ns": 90.39,
-        "cn_ns": 100.76,
-        "wall_ms": 8.2
+        "ca_ns": 116.51,
+        "cg_ns": 116.49,
+        "cs_ns": 83.76,
+        "cn_ns": 126.54,
+        "wall_ms": 7.0
       },
       {
         "size_bytes": 262144,
-        "ca_ns": 110.79,
-        "cg_ns": 118.27,
-        "cs_ns": 107.31,
-        "cn_ns": 111.45,
-        "wall_ms": 9.0
+        "ca_ns": 116.43,
+        "cg_ns": 116.49,
+        "cs_ns": 102.46,
+        "cn_ns": 125.67,
+        "wall_ms": 8.0
       },
       {
         "size_bytes": 524288,
-        "ca_ns": 114.8,
-        "cg_ns": 118.57,
-        "cs_ns": 113.98,
-        "cn_ns": 116.08,
-        "wall_ms": 9.3
-      },
-      {
-        "size_bytes": 1048576,
-        "ca_ns": 116.63,
-        "cg_ns": 118.31,
-        "cs_ns": 116.63,
-        "cn_ns": 118.57,
+        "ca_ns": 116.47,
+        "cg_ns": 116.5,
+        "cs_ns": 110.99,
+        "cn_ns": 122.68,
         "wall_ms": 9.4
       },
       {
+        "size_bytes": 1048576,
+        "ca_ns": 116.52,
+        "cg_ns": 116.42,
+        "cs_ns": 114.2,
+        "cn_ns": 123.55,
+        "wall_ms": 12.0
+      },
+      {
         "size_bytes": 2097152,
-        "ca_ns": 117.56,
-        "cg_ns": 118.27,
-        "cs_ns": 117.62,
-        "cn_ns": 121.73,
-        "wall_ms": 9.5
+        "ca_ns": 116.52,
+        "cg_ns": 116.47,
+        "cs_ns": 115.86,
+        "cn_ns": 122.29,
+        "wall_ms": 17.0
       },
       {
         "size_bytes": 4194304,
-        "ca_ns": 118.68,
-        "cg_ns": 119.03,
-        "cs_ns": 118.9,
-        "cn_ns": 127.19,
-        "wall_ms": 9.7
+        "ca_ns": 116.63,
+        "cg_ns": 116.58,
+        "cs_ns": 116.69,
+        "cn_ns": 124.66,
+        "wall_ms": 27.4
       },
       {
         "size_bytes": 8388608,
-        "ca_ns": 201.1,
-        "cg_ns": 201.63,
-        "cs_ns": 201.0,
-        "cn_ns": 202.74,
-        "wall_ms": 16.1
+        "ca_ns": 234.19,
+        "cg_ns": 234.67,
+        "cs_ns": 234.09,
+        "cn_ns": 234.8,
+        "wall_ms": 91.0
       },
       {
         "size_bytes": 16777216,
-        "ca_ns": 223.51,
-        "cg_ns": 223.54,
-        "cs_ns": 223.39,
-        "cn_ns": 223.77,
-        "wall_ms": 17.9
+        "ca_ns": 236.02,
+        "cg_ns": 235.72,
+        "cs_ns": 235.64,
+        "cn_ns": 233.76,
+        "wall_ms": 167.3
       },
       {
         "size_bytes": 33554432,
-        "ca_ns": 232.35,
-        "cg_ns": 232.45,
-        "cs_ns": 232.65,
-        "cn_ns": 232.65,
-        "wall_ms": 18.6
+        "ca_ns": 236.63,
+        "cg_ns": 236.57,
+        "cs_ns": 236.95,
+        "cn_ns": 236.12,
+        "wall_ms": 323.7
       },
       {
         "size_bytes": 67108864,
-        "ca_ns": 239.15,
-        "cg_ns": 238.69,
-        "cs_ns": 238.7,
-        "cn_ns": 238.76,
-        "wall_ms": 19.1
+        "ca_ns": 240.03,
+        "cg_ns": 239.57,
+        "cs_ns": 240.27,
+        "cn_ns": 238.91,
+        "wall_ms": 640.7
       },
       {
         "size_bytes": 134217728,
-        "ca_ns": 241.47,
-        "cg_ns": 241.94,
-        "cs_ns": 241.16,
-        "cn_ns": 241.93,
-        "wall_ms": 19.3
+        "ca_ns": 240.99,
+        "cg_ns": 240.74,
+        "cs_ns": 241.15,
+        "cn_ns": 240.16,
+        "wall_ms": 1273.6
       }
     ],
     "BW_WARM": [
       {
         "size_bytes": 65536,
-        "ca_gbps": 29.09,
-        "cg_gbps": 31.22,
-        "cs_gbps": 29.85,
-        "cn_gbps": 29.77,
+        "ca_gbps": 30.57,
+        "cg_gbps": 32.0,
+        "cs_gbps": 32.05,
+        "cn_gbps": 13.33,
         "wall_ms": 0.1
       },
       {
         "size_bytes": 131072,
-        "ca_gbps": 60.15,
-        "cg_gbps": 62.53,
-        "cs_gbps": 63.21,
-        "cn_gbps": 61.41,
+        "ca_gbps": 67.59,
+        "cg_gbps": 64.2,
+        "cs_gbps": 65.75,
+        "cn_gbps": 24.09,
         "wall_ms": 0.1
       },
       {
         "size_bytes": 262144,
-        "ca_gbps": 120.65,
-        "cg_gbps": 123.19,
-        "cs_gbps": 125.07,
-        "cn_gbps": 121.0,
+        "ca_gbps": 127.8,
+        "cg_gbps": 131.07,
+        "cs_gbps": 128.0,
+        "cn_gbps": 47.79,
         "wall_ms": 0.1
       },
       {
         "size_bytes": 524288,
-        "ca_gbps": 237.11,
-        "cg_gbps": 249.38,
-        "cs_gbps": 241.65,
-        "cn_gbps": 230.11,
+        "ca_gbps": 251.29,
+        "cg_gbps": 257.21,
+        "cs_gbps": 270.81,
+        "cn_gbps": 88.47,
         "wall_ms": 0.1
       },
       {
         "size_bytes": 1048576,
-        "ca_gbps": 414.78,
-        "cg_gbps": 400.1,
-        "cs_gbps": 427.78,
-        "cn_gbps": 367.35,
+        "ca_gbps": 419.03,
+        "cg_gbps": 414.26,
+        "cs_gbps": 465.45,
+        "cn_gbps": 146.94,
         "wall_ms": 0.1
       },
       {
         "size_bytes": 2097152,
-        "ca_gbps": 602.35,
-        "cg_gbps": 606.25,
-        "cs_gbps": 674.93,
-        "cn_gbps": 532.38,
+        "ca_gbps": 614.21,
+        "cg_gbps": 631.37,
+        "cs_gbps": 655.36,
+        "cn_gbps": 228.99,
         "wall_ms": 0.1
       },
       {
         "size_bytes": 4194304,
-        "ca_gbps": 673.89,
-        "cg_gbps": 675.28,
-        "cs_gbps": 736.77,
-        "cn_gbps": 605.13,
+        "ca_gbps": 680.54,
+        "cg_gbps": 667.37,
+        "cs_gbps": 745.15,
+        "cn_gbps": 299.39,
         "wall_ms": 0.3
       },
       {
         "size_bytes": 8388608,
-        "ca_gbps": 410.37,
-        "cg_gbps": 408.83,
-        "cs_gbps": 417.76,
-        "cn_gbps": 404.79,
-        "wall_ms": 0.8
+        "ca_gbps": 410.31,
+        "cg_gbps": 410.37,
+        "cs_gbps": 416.83,
+        "cn_gbps": 357.24,
+        "wall_ms": 0.7
       },
       {
         "size_bytes": 16777216,
-        "ca_gbps": 426.39,
-        "cg_gbps": 424.94,
-        "cs_gbps": 433.44,
-        "cn_gbps": 425.04,
-        "wall_ms": 1.6
+        "ca_gbps": 427.78,
+        "cg_gbps": 426.6,
+        "cs_gbps": 435.74,
+        "cn_gbps": 389.34,
+        "wall_ms": 1.4
       },
       {
         "size_bytes": 33554432,
-        "ca_gbps": 429.39,
-        "cg_gbps": 430.1,
-        "cs_gbps": 442.81,
-        "cn_gbps": 428.51,
-        "wall_ms": 3.1
+        "ca_gbps": 428.81,
+        "cg_gbps": 429.52,
+        "cs_gbps": 442.46,
+        "cn_gbps": 414.56,
+        "wall_ms": 2.7
       },
       {
         "size_bytes": 67108864,
-        "ca_gbps": 420.1,
-        "cg_gbps": 418.41,
-        "cs_gbps": 434.62,
-        "cn_gbps": 419.55,
-        "wall_ms": 6.3
+        "ca_gbps": 420.96,
+        "cg_gbps": 419.88,
+        "cs_gbps": 437.39,
+        "cn_gbps": 410.66,
+        "wall_ms": 5.5
       },
       {
         "size_bytes": 134217728,
-        "ca_gbps": 398.16,
-        "cg_gbps": 398.61,
-        "cs_gbps": 412.81,
-        "cn_gbps": 394.84,
-        "wall_ms": 13.4
+        "ca_gbps": 363.64,
+        "cg_gbps": 396.23,
+        "cs_gbps": 414.99,
+        "cn_gbps": 396.62,
+        "wall_ms": 12.0
+      }
+    ],
+    "BLOCK_COST": [
+      {
+        "n_blocks": 48,
+        "blocks_per_sm": 1,
+        "total_us": 2.54,
+        "us_per_block": 2.54,
+        "wall_ms": 0.1
+      },
+      {
+        "n_blocks": 96,
+        "blocks_per_sm": 2,
+        "total_us": 2.545,
+        "us_per_block": 1.272,
+        "wall_ms": 0.1
+      },
+      {
+        "n_blocks": 192,
+        "blocks_per_sm": 4,
+        "total_us": 2.663,
+        "us_per_block": 0.666,
+        "wall_ms": 0.1
+      },
+      {
+        "n_blocks": 384,
+        "blocks_per_sm": 8,
+        "total_us": 3.043,
+        "us_per_block": 0.38,
+        "wall_ms": 0.2
+      },
+      {
+        "n_blocks": 768,
+        "blocks_per_sm": 16,
+        "total_us": 4.724,
+        "us_per_block": 0.295,
+        "wall_ms": 0.2
+      },
+      {
+        "n_blocks": 1536,
+        "blocks_per_sm": 32,
+        "total_us": 7.273,
+        "us_per_block": 0.227,
+        "wall_ms": 0.4
+      },
+      {
+        "n_blocks": 3072,
+        "blocks_per_sm": 64,
+        "total_us": 12.165,
+        "us_per_block": 0.19,
+        "wall_ms": 0.6
+      }
+    ],
+    "CONC_WARP": [
+      {
+        "n_warps": 1,
+        "ns_per_hop": 236.4,
+        "hops_per_us": 4.2301,
+        "wall_ms": 11.8
+      },
+      {
+        "n_warps": 2,
+        "ns_per_hop": 236.84,
+        "hops_per_us": 8.4445,
+        "wall_ms": 11.8
+      },
+      {
+        "n_warps": 4,
+        "ns_per_hop": 237.67,
+        "hops_per_us": 16.8303,
+        "wall_ms": 11.9
+      },
+      {
+        "n_warps": 8,
+        "ns_per_hop": 239.76,
+        "hops_per_us": 33.367,
+        "wall_ms": 12.0
+      },
+      {
+        "n_warps": 16,
+        "ns_per_hop": 242.96,
+        "hops_per_us": 65.8541,
+        "wall_ms": 12.1
+      },
+      {
+        "n_warps": 32,
+        "ns_per_hop": 250.86,
+        "hops_per_us": 127.5631,
+        "wall_ms": 12.5
+      }
+    ],
+    "CONC_BLOCK": [
+      {
+        "n_blocks": 1,
+        "ns_per_hop": 236.25,
+        "hops_per_us": 4.2328,
+        "wall_ms": 11.8
+      },
+      {
+        "n_blocks": 2,
+        "ns_per_hop": 241.48,
+        "hops_per_us": 8.2822,
+        "wall_ms": 12.1
+      },
+      {
+        "n_blocks": 4,
+        "ns_per_hop": 236.7,
+        "hops_per_us": 16.899,
+        "wall_ms": 11.8
+      },
+      {
+        "n_blocks": 8,
+        "ns_per_hop": 236.91,
+        "hops_per_us": 33.7676,
+        "wall_ms": 11.8
+      },
+      {
+        "n_blocks": 16,
+        "ns_per_hop": 237.66,
+        "hops_per_us": 67.3228,
+        "wall_ms": 11.9
+      },
+      {
+        "n_blocks": 32,
+        "ns_per_hop": 238.29,
+        "hops_per_us": 134.2906,
+        "wall_ms": 11.9
+      },
+      {
+        "n_blocks": 48,
+        "ns_per_hop": 239.48,
+        "hops_per_us": 200.4345,
+        "wall_ms": 12.0
+      },
+      {
+        "n_blocks": 96,
+        "ns_per_hop": 243.81,
+        "hops_per_us": 393.7432,
+        "wall_ms": 12.2
+      },
+      {
+        "n_blocks": 192,
+        "ns_per_hop": 255.87,
+        "hops_per_us": 750.3789,
+        "wall_ms": 12.8
+      },
+      {
+        "n_blocks": 384,
+        "ns_per_hop": 293.92,
+        "hops_per_us": 1306.4694,
+        "wall_ms": 14.7
+      },
+      {
+        "n_blocks": 768,
+        "ns_per_hop": 398.26,
+        "hops_per_us": 1928.3955,
+        "wall_ms": 19.9
+      }
+    ],
+    "L2_PERSIST": [
+      {
+        "size_bytes": 65536,
+        "cold_bw_gbps": 11.91,
+        "warm_bw_gbps": 21.02,
+        "wall_ms": 0.0
+      },
+      {
+        "size_bytes": 131072,
+        "cold_bw_gbps": 24.53,
+        "warm_bw_gbps": 44.31,
+        "wall_ms": 0.0
+      },
+      {
+        "size_bytes": 262144,
+        "cold_bw_gbps": 45.26,
+        "warm_bw_gbps": 87.05,
+        "wall_ms": 0.0
+      },
+      {
+        "size_bytes": 524288,
+        "cold_bw_gbps": 80.71,
+        "warm_bw_gbps": 175.96,
+        "wall_ms": 0.0
+      },
+      {
+        "size_bytes": 1048576,
+        "cold_bw_gbps": 136.53,
+        "warm_bw_gbps": 301.55,
+        "wall_ms": 0.0
+      },
+      {
+        "size_bytes": 2097152,
+        "cold_bw_gbps": 212.09,
+        "warm_bw_gbps": 476.82,
+        "wall_ms": 0.0
+      },
+      {
+        "size_bytes": 4194304,
+        "cold_bw_gbps": 293.23,
+        "warm_bw_gbps": 596.69,
+        "wall_ms": 0.1
+      },
+      {
+        "size_bytes": 8388608,
+        "cold_bw_gbps": 357.14,
+        "warm_bw_gbps": 392.24,
+        "wall_ms": 0.2
+      },
+      {
+        "size_bytes": 16777216,
+        "cold_bw_gbps": 392.14,
+        "warm_bw_gbps": 418.17,
+        "wall_ms": 0.4
+      },
+      {
+        "size_bytes": 33554432,
+        "cold_bw_gbps": 413.97,
+        "warm_bw_gbps": 425.83,
+        "wall_ms": 0.8
+      },
+      {
+        "size_bytes": 67108864,
+        "cold_bw_gbps": 414.7,
+        "warm_bw_gbps": 418.27,
+        "wall_ms": 1.6
+      },
+      {
+        "size_bytes": 134217728,
+        "cold_bw_gbps": 399.91,
+        "warm_bw_gbps": 396.09,
+        "wall_ms": 3.4
       }
     ]
   }

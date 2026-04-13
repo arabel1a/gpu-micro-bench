@@ -1,0 +1,334 @@
+{
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 2080 SUPER",
+    "sm": "sm_75",
+    "n_sms": 48,
+    "l2_kb": 4096
+  },
+  "tests": [
+    {
+      "op": "fadd",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 1109553.9,
+      "ns_per_op": 1.387,
+      "ops_per_ns": 0.721,
+      "wall_ms": 55.5
+    },
+    {
+      "op": "fadd",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1990005.9,
+      "ns_per_op": 2.488,
+      "ops_per_ns": 0.402,
+      "wall_ms": 99.5
+    },
+    {
+      "op": "fmul",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 918741.6,
+      "ns_per_op": 1.148,
+      "ops_per_ns": 0.8708,
+      "wall_ms": 45.9
+    },
+    {
+      "op": "fmul",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1683327.2,
+      "ns_per_op": 2.104,
+      "ops_per_ns": 0.4752,
+      "wall_ms": 84.2
+    },
+    {
+      "op": "ffma",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 993169.7,
+      "ns_per_op": 1.241,
+      "ops_per_ns": 0.8055,
+      "wall_ms": 49.7
+    },
+    {
+      "op": "ffma",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1745704.1,
+      "ns_per_op": 2.182,
+      "ops_per_ns": 0.4583,
+      "wall_ms": 87.3
+    },
+    {
+      "op": "hadd2",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 905405.4,
+      "ns_per_op": 1.132,
+      "ops_per_ns": 0.8836,
+      "wall_ms": 45.3
+    },
+    {
+      "op": "hadd2",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 2480426.8,
+      "ns_per_op": 3.101,
+      "ops_per_ns": 0.3225,
+      "wall_ms": 124.0
+    },
+    {
+      "op": "hmul2",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 905529.0,
+      "ns_per_op": 1.132,
+      "ops_per_ns": 0.8835,
+      "wall_ms": 45.3
+    },
+    {
+      "op": "hmul2",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 2509288.1,
+      "ns_per_op": 3.137,
+      "ops_per_ns": 0.3188,
+      "wall_ms": 125.5
+    },
+    {
+      "op": "hfma2",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 980891.6,
+      "ns_per_op": 1.226,
+      "ops_per_ns": 0.8156,
+      "wall_ms": 49.0
+    },
+    {
+      "op": "hfma2",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 2557079.6,
+      "ns_per_op": 3.196,
+      "ops_per_ns": 0.3129,
+      "wall_ms": 127.9
+    },
+    {
+      "op": "iadd",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 354033.2,
+      "ns_per_op": 0.443,
+      "ops_per_ns": 2.2597,
+      "wall_ms": 17.7
+    },
+    {
+      "op": "iadd",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 316326.4,
+      "ns_per_op": 0.395,
+      "ops_per_ns": 2.529,
+      "wall_ms": 15.8
+    },
+    {
+      "op": "imad",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 993238.9,
+      "ns_per_op": 1.242,
+      "ops_per_ns": 0.8054,
+      "wall_ms": 49.7
+    },
+    {
+      "op": "imad",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1745420.7,
+      "ns_per_op": 2.182,
+      "ops_per_ns": 0.4583,
+      "wall_ms": 87.3
+    },
+    {
+      "op": "dp4a",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 993236.3,
+      "ns_per_op": 1.242,
+      "ops_per_ns": 0.8054,
+      "wall_ms": 49.7
+    },
+    {
+      "op": "dp4a",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1745445.6,
+      "ns_per_op": 2.182,
+      "ops_per_ns": 0.4583,
+      "wall_ms": 87.3
+    },
+    {
+      "op": "shl",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 316369.9,
+      "ns_per_op": 0.395,
+      "ops_per_ns": 2.5287,
+      "wall_ms": 15.8
+    },
+    {
+      "op": "shl",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 3108.5,
+      "ns_per_op": 0.004,
+      "ops_per_ns": 257.3606,
+      "wall_ms": 0.2
+    },
+    {
+      "op": "shr",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 353998.7,
+      "ns_per_op": 0.442,
+      "ops_per_ns": 2.2599,
+      "wall_ms": 17.7
+    },
+    {
+      "op": "shr",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 316325.0,
+      "ns_per_op": 0.395,
+      "ops_per_ns": 2.529,
+      "wall_ms": 15.8
+    },
+    {
+      "op": "band",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 353784.9,
+      "ns_per_op": 0.442,
+      "ops_per_ns": 2.2613,
+      "wall_ms": 17.7
+    },
+    {
+      "op": "band",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 316393.6,
+      "ns_per_op": 0.395,
+      "ops_per_ns": 2.5285,
+      "wall_ms": 15.8
+    },
+    {
+      "op": "bor",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 353972.5,
+      "ns_per_op": 0.442,
+      "ops_per_ns": 2.2601,
+      "wall_ms": 17.7
+    },
+    {
+      "op": "bor",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 316384.6,
+      "ns_per_op": 0.395,
+      "ops_per_ns": 2.5286,
+      "wall_ms": 15.8
+    },
+    {
+      "op": "bxor",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 353892.5,
+      "ns_per_op": 0.442,
+      "ops_per_ns": 2.2606,
+      "wall_ms": 17.7
+    },
+    {
+      "op": "bxor",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 316302.7,
+      "ns_per_op": 0.395,
+      "ops_per_ns": 2.5292,
+      "wall_ms": 15.8
+    },
+    {
+      "op": "lop3",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 980601.5,
+      "ns_per_op": 1.226,
+      "ops_per_ns": 0.8158,
+      "wall_ms": 49.0
+    },
+    {
+      "op": "lop3",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1745346.0,
+      "ns_per_op": 2.182,
+      "ops_per_ns": 0.4584,
+      "wall_ms": 87.3
+    },
+    {
+      "op": "prmt",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 1006068.0,
+      "ns_per_op": 1.258,
+      "ops_per_ns": 0.7952,
+      "wall_ms": 50.3
+    },
+    {
+      "op": "prmt",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1770935.1,
+      "ns_per_op": 2.214,
+      "ops_per_ns": 0.4517,
+      "wall_ms": 88.5
+    },
+    {
+      "op": "hmma_f16",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 13272649.8,
+      "ns_per_op": 16.591,
+      "ops_per_ns": 0.0603,
+      "wall_ms": 663.6
+    },
+    {
+      "op": "hmma_f16",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 13250396.7,
+      "ns_per_op": 16.563,
+      "ops_per_ns": 0.0604,
+      "wall_ms": 662.5
+    },
+    {
+      "op": "imma_s8",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 1782971.0,
+      "ns_per_op": 2.229,
+      "ops_per_ns": 0.4487,
+      "wall_ms": 89.1
+    },
+    {
+      "op": "imma_s8",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 4162117.0,
+      "ns_per_op": 5.203,
+      "ops_per_ns": 0.1922,
+      "wall_ms": 208.1
+    }
+  ]
+}

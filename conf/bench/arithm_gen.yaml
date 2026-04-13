@@ -1,0 +1,7 @@
+_target_: run.run_arithm
+name: arithm_gen
+binary: ./bin/arithmtest_gen
+
+n_iters: 100000
+n_warmup: 10
+n_reps: 50

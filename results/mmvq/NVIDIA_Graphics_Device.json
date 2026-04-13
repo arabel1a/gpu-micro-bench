@@ -1,0 +1,95 @@
+{
+  "gpu": {
+    "name": "NVIDIA Graphics Device",
+    "sm": "sm_80",
+    "n_sms": 70,
+    "l2_kb": 32768
+  },
+  "layers": [
+    {
+      "name": "q_proj",
+      "nrows": 4096,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 910.0,
+      "us_per_call": 28.44,
+      "weight_mb": 2.25,
+      "eff_bw_gbps": 77.27
+    },
+    {
+      "name": "k_proj",
+      "nrows": 1024,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 308.7,
+      "us_per_call": 9.65,
+      "weight_mb": 0.56,
+      "eff_bw_gbps": 56.94
+    },
+    {
+      "name": "v_proj",
+      "nrows": 1024,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 308.7,
+      "us_per_call": 9.65,
+      "weight_mb": 0.56,
+      "eff_bw_gbps": 56.95
+    },
+    {
+      "name": "o_proj",
+      "nrows": 4096,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 910.7,
+      "us_per_call": 28.46,
+      "weight_mb": 2.25,
+      "eff_bw_gbps": 77.21
+    },
+    {
+      "name": "gate_proj",
+      "nrows": 12288,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 2475.1,
+      "us_per_call": 77.35,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 85.22
+    },
+    {
+      "name": "up_proj",
+      "nrows": 12288,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 2475.2,
+      "us_per_call": 77.35,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 85.22
+    },
+    {
+      "name": "down_proj",
+      "nrows": 4096,
+      "ncols": 12288,
+      "count": 32,
+      "us_per_token": 2473.1,
+      "us_per_call": 77.28,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 85.29
+    },
+    {
+      "name": "lm_head",
+      "nrows": 151669,
+      "ncols": 4096,
+      "count": 1,
+      "us_per_token": 910.0,
+      "us_per_call": 909.96,
+      "weight_mb": 83.31,
+      "eff_bw_gbps": 89.41
+    }
+  ],
+  "summary": {
+    "us_per_token": 10771.3,
+    "equiv_tps": 92.84,
+    "total_weight_mb": 911.31
+  }
+}

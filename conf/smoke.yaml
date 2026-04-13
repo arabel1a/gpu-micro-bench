@@ -3,14 +3,12 @@ defaults:
   - _self_
 
 run_name: smoke
+overwrite: true
 
-sizes:
-  - 2048
-  - 65536
-  - 4194304
-
-n_hops_min: 1000
-
-gpu_ids:
-  - 0
-  - 1
+# Override bench-specific params for quick smoke test
+bench:
+  sizes:
+    - 2048
+    - 65536
+    - 4194304
+  n_hops_min: 1000

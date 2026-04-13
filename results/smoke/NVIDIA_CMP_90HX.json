@@ -10,69 +10,69 @@
       {
         "size_bytes": 2048,
         "ca_ns": 30.0,
-        "cg_ns": 147.0,
+        "cg_ns": 146.94,
         "cs_ns": 28.5,
-        "cn_ns": 34.91,
-        "wall_ms": 0.5
+        "cn_ns": 152.98,
+        "wall_ms": 0.7
       },
       {
         "size_bytes": 65536,
         "ca_ns": 26.56,
-        "cg_ns": 141.58,
-        "cs_ns": 26.56,
-        "cn_ns": 30.69,
-        "wall_ms": 14.8
+        "cg_ns": 141.56,
+        "cs_ns": 26.59,
+        "cn_ns": 145.72,
+        "wall_ms": 22.3
       },
       {
         "size_bytes": 4194304,
-        "ca_ns": 231.01,
-        "cg_ns": 231.88,
-        "cs_ns": 233.31,
-        "cn_ns": 231.22,
-        "wall_ms": 3889.9
+        "ca_ns": 231.26,
+        "cg_ns": 231.92,
+        "cs_ns": 233.81,
+        "cn_ns": 232.06,
+        "wall_ms": 3896.7
       }
     ],
     "LAT_MULTI": [
       {
         "size_bytes": 2048,
         "ca_ns": 22.32,
-        "cg_ns": 142.44,
-        "cs_ns": 22.22,
-        "cn_ns": 22.36,
-        "wall_ms": 4.2
+        "cg_ns": 142.43,
+        "cs_ns": 22.27,
+        "cn_ns": 142.52,
+        "wall_ms": 6.6
       },
       {
         "size_bytes": 65536,
-        "ca_ns": 33.89,
+        "ca_ns": 33.94,
         "cg_ns": 139.57,
-        "cs_ns": 33.89,
-        "cn_ns": 34.23,
-        "wall_ms": 4.8
+        "cs_ns": 33.94,
+        "cn_ns": 139.83,
+        "wall_ms": 6.9
       },
       {
         "size_bytes": 4194304,
-        "ca_ns": 238.75,
-        "cg_ns": 239.97,
-        "cs_ns": 239.0,
-        "cn_ns": 239.41,
-        "wall_ms": 19.1
+        "ca_ns": 238.64,
+        "cg_ns": 239.76,
+        "cs_ns": 239.16,
+        "cn_ns": 240.66,
+        "wall_ms": 19.2
       }
     ],
     "BW_WARM": [
       {
         "size_bytes": 65536,
-        "ca_gbps": 26.81,
-        "cg_gbps": 29.3,
-        "cs_gbps": 27.83,
-        "cn_gbps": 28.97,
+        "ca_gbps": 26.67,
+        "cg_gbps": 26.81,
+        "cs_gbps": 26.67,
+        "cn_gbps": 26.98,
         "wall_ms": 0.1
       },
       {
         "size_bytes": 4194304,
-        "ca_gbps": 427.5,
-        "cg_gbps": 435.74,
-        "cs_gbps": 445.22,
-        "cn_gbps": 423.63,
+        "ca_gbps": 425.97,
+        "cg_gbps": 426.67,
+        "cs_gbps": 440.28,
+        "cn_gbps": 419.83,
         "wall_ms": 0.4
       }
     ]

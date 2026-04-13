@@ -1,0 +1,95 @@
+{
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3090",
+    "sm": "sm_86",
+    "n_sms": 82,
+    "l2_kb": 6144
+  },
+  "layers": [
+    {
+      "name": "q_proj",
+      "nrows": 4096,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 275.4,
+      "us_per_call": 8.61,
+      "weight_mb": 2.25,
+      "eff_bw_gbps": 255.33
+    },
+    {
+      "name": "k_proj",
+      "nrows": 1024,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 138.3,
+      "us_per_call": 4.32,
+      "weight_mb": 0.56,
+      "eff_bw_gbps": 127.14
+    },
+    {
+      "name": "v_proj",
+      "nrows": 1024,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 138.2,
+      "us_per_call": 4.32,
+      "weight_mb": 0.56,
+      "eff_bw_gbps": 127.22
+    },
+    {
+      "name": "o_proj",
+      "nrows": 4096,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 275.4,
+      "us_per_call": 8.61,
+      "weight_mb": 2.25,
+      "eff_bw_gbps": 255.29
+    },
+    {
+      "name": "gate_proj",
+      "nrows": 12288,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 731.2,
+      "us_per_call": 22.85,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 288.47
+    },
+    {
+      "name": "up_proj",
+      "nrows": 12288,
+      "ncols": 4096,
+      "count": 32,
+      "us_per_token": 734.0,
+      "us_per_call": 22.94,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 287.39
+    },
+    {
+      "name": "down_proj",
+      "nrows": 4096,
+      "ncols": 12288,
+      "count": 32,
+      "us_per_token": 629.0,
+      "us_per_call": 19.66,
+      "weight_mb": 6.75,
+      "eff_bw_gbps": 335.36
+    },
+    {
+      "name": "lm_head",
+      "nrows": 151669,
+      "ncols": 4096,
+      "count": 1,
+      "us_per_token": 255.0,
+      "us_per_call": 255.05,
+      "weight_mb": 83.31,
+      "eff_bw_gbps": 319.01
+    }
+  ],
+  "summary": {
+    "us_per_token": 3176.5,
+    "equiv_tps": 314.81,
+    "total_weight_mb": 911.31
+  }
+}

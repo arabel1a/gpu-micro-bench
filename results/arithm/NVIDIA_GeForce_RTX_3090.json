@@ -1,0 +1,100 @@
+{
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3090",
+    "sm": "sm_86",
+    "n_sms": 82,
+    "l2_kb": 6144
+  },
+  "tests": [
+    {
+      "op": "FADD",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 652158.2,
+      "ns_per_op": 0.815,
+      "ops_per_ns": 1.2267,
+      "wall_ms": 32.6
+    },
+    {
+      "op": "FADD",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1994420.8,
+      "ns_per_op": 2.493,
+      "ops_per_ns": 0.4011,
+      "wall_ms": 99.7
+    },
+    {
+      "op": "FMUL",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 652167.8,
+      "ns_per_op": 0.815,
+      "ops_per_ns": 1.2267,
+      "wall_ms": 32.6
+    },
+    {
+      "op": "FMUL",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 2017507.5,
+      "ns_per_op": 2.522,
+      "ops_per_ns": 0.3965,
+      "wall_ms": 100.9
+    },
+    {
+      "op": "FFMA",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 703414.9,
+      "ns_per_op": 0.879,
+      "ops_per_ns": 1.1373,
+      "wall_ms": 35.2
+    },
+    {
+      "op": "FFMA",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1977894.5,
+      "ns_per_op": 2.472,
+      "ops_per_ns": 0.4045,
+      "wall_ms": 98.9
+    },
+    {
+      "op": "DP4A",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 1069701.9,
+      "ns_per_op": 1.337,
+      "ops_per_ns": 0.7479,
+      "wall_ms": 53.5
+    },
+    {
+      "op": "DP4A",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1883077.4,
+      "ns_per_op": 2.354,
+      "ops_per_ns": 0.4248,
+      "wall_ms": 94.2
+    },
+    {
+      "op": "IMAD",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 1036996.8,
+      "ns_per_op": 1.296,
+      "ops_per_ns": 0.7715,
+      "wall_ms": 51.8
+    },
+    {
+      "op": "IMAD",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 1784838.9,
+      "ns_per_op": 2.231,
+      "ops_per_ns": 0.4482,
+      "wall_ms": 89.2
+    }
+  ]
+}

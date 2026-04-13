@@ -1,0 +1,18 @@
+_target_: run.run_mmvq
+name: mmvq
+binary: ./bin/mmvq_bench
+
+n_warmup: 20
+n_reps: 100
+
+# Qwen3-8B Q1_0_g128 layer shapes (nrows:ncols:count_per_token)
+# 32 transformer blocks, each with 7 linear layers + 1 lm_head
+layers:
+  q_proj:    {nrows: 4096,   ncols: 4096,  count: 32}
+  k_proj:    {nrows: 1024,   ncols: 4096,  count: 32}
+  v_proj:    {nrows: 1024,   ncols: 4096,  count: 32}
+  o_proj:    {nrows: 4096,   ncols: 4096,  count: 32}
+  gate_proj: {nrows: 12288,  ncols: 4096,  count: 32}
+  up_proj:   {nrows: 12288,  ncols: 4096,  count: 32}
+  down_proj: {nrows: 4096,   ncols: 12288, count: 32}
+  lm_head:   {nrows: 151669, ncols: 4096,  count: 1}

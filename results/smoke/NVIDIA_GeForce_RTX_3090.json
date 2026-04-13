@@ -1,0 +1,80 @@
+{
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3090",
+    "sm": "sm_86",
+    "n_sms": 82,
+    "l2_kb": 6144
+  },
+  "tests": {
+    "LAT_WARM": [
+      {
+        "size_bytes": 2048,
+        "ca_ns": 29.45,
+        "cg_ns": 153.0,
+        "cs_ns": 29.5,
+        "cn_ns": 33.98,
+        "wall_ms": 0.5
+      },
+      {
+        "size_bytes": 65536,
+        "ca_ns": 27.0,
+        "cg_ns": 149.25,
+        "cs_ns": 26.97,
+        "cn_ns": 31.27,
+        "wall_ms": 15.4
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_ns": 129.35,
+        "cg_ns": 129.02,
+        "cs_ns": 143.11,
+        "cn_ns": 132.36,
+        "wall_ms": 2239.1
+      }
+    ],
+    "LAT_MULTI": [
+      {
+        "size_bytes": 2048,
+        "ca_ns": 20.28,
+        "cg_ns": 130.97,
+        "cs_ns": 20.28,
+        "cn_ns": 20.38,
+        "wall_ms": 3.8
+      },
+      {
+        "size_bytes": 65536,
+        "ca_ns": 31.18,
+        "cg_ns": 129.84,
+        "cs_ns": 31.23,
+        "cn_ns": 31.45,
+        "wall_ms": 4.5
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_ns": 129.33,
+        "cg_ns": 129.95,
+        "cs_ns": 132.51,
+        "cn_ns": 140.97,
+        "wall_ms": 10.7
+      }
+    ],
+    "BW_WARM": [
+      {
+        "size_bytes": 65536,
+        "ca_gbps": 29.09,
+        "cg_gbps": 29.09,
+        "cs_gbps": 32.0,
+        "cn_gbps": 32.82,
+        "wall_ms": 0.1
+      },
+      {
+        "size_bytes": 4194304,
+        "ca_gbps": 1050.26,
+        "cg_gbps": 1050.26,
+        "cs_gbps": 1050.26,
+        "cn_gbps": 936.23,
+        "wall_ms": 0.2
+      }
+    ]
+  }
+}
