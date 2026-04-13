@@ -47,8 +47,31 @@ static __device__ __forceinline__ int get_int_b4(const void * x, const int & i32
     return ((const int *) x)[i32];
 }
 
+// static __device__ __forceinline__ int ggml_cuda_dp4a(const int a, const int b, int c) {
+// #if (__CUDA_ARCH__ >= 610) && !defined(DISABLE_DP4A)
+//     return __dp4a(a, b, c);
+// #else
+//     const int8_t * a8 = (const int8_t *) &a;
+//     const int8_t * b8 = (const int8_t *) &b;
+//     return c + a8[0]*b8[0] + a8[1]*b8[1] + a8[2]*b8[2] + a8[3]*b8[3];
+// #endif
+// }
 static __device__ __forceinline__ int ggml_cuda_dp4a(const int a, const int b, int c) {
-#if __CUDA_ARCH__ >= 610
+#if defined(DP4A_REPL_DP2A)
+    int8_t a0 = (int8_t)(a >> 0);
+    int8_t a1 = (int8_t)(a >> 8);
+    int8_t a2 = (int8_t)(a >> 16);
+    int8_t a3 = (int8_t)(a >> 24);
+
+    int16_t a_lo = (int16_t)a0 | ((int16_t)a1 << 8);
+    int16_t a_hi = (int16_t)a2 | ((int16_t)a3 << 8);
+    int32_t a_packed = ((int32_t)a_hi << 16) | (uint32_t)a_lo;
+
+    int part_lo = __dp2a_lo(a_packed, b, c);
+    int part_hi = __dp2a_hi(a_packed, b, 0);
+    return part_lo + part_hi;
+
+#elif (__CUDA_ARCH__ >= 610) && !defined(DISABLE_DP4A)
     return __dp4a(a, b, c);
 #else
     const int8_t * a8 = (const int8_t *) &a;
@@ -56,7 +79,6 @@ static __device__ __forceinline__ int ggml_cuda_dp4a(const int a, const int b, i
     return c + a8[0]*b8[0] + a8[1]*b8[1] + a8[2]*b8[2] + a8[3]*b8[3];
 #endif
 }
-
 template<int width = 32>
 static __device__ __forceinline__ float warp_reduce_sum(float x) {
 #pragma unroll

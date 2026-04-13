@@ -1,0 +1,5 @@
+defaults:
+  - mmvq
+  - _self_
+name: mmvq_nodp4a
+binary: ./bin/mmvq_bench_nodp4a
