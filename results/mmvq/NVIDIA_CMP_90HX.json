@@ -11,85 +11,85 @@
       "nrows": 4096,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 1085.9,
-      "us_per_call": 33.93,
+      "us_per_token": 1117.5,
+      "us_per_call": 34.92,
       "weight_mb": 2.25,
-      "eff_bw_gbps": 64.75
+      "eff_bw_gbps": 62.92
     },
     {
       "name": "k_proj",
       "nrows": 1024,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 376.5,
-      "us_per_call": 11.77,
+      "us_per_token": 387.4,
+      "us_per_call": 12.11,
       "weight_mb": 0.56,
-      "eff_bw_gbps": 46.69
+      "eff_bw_gbps": 45.37
     },
     {
       "name": "v_proj",
       "nrows": 1024,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 376.4,
-      "us_per_call": 11.76,
+      "us_per_token": 384.7,
+      "us_per_call": 12.02,
       "weight_mb": 0.56,
-      "eff_bw_gbps": 46.7
+      "eff_bw_gbps": 45.69
     },
     {
       "name": "o_proj",
       "nrows": 4096,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 1086.2,
-      "us_per_call": 33.94,
+      "us_per_token": 1085.2,
+      "us_per_call": 33.91,
       "weight_mb": 2.25,
-      "eff_bw_gbps": 64.74
+      "eff_bw_gbps": 64.79
     },
     {
       "name": "gate_proj",
       "nrows": 12288,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 3095.8,
-      "us_per_call": 96.74,
+      "us_per_token": 3093.7,
+      "us_per_call": 96.68,
       "weight_mb": 6.75,
-      "eff_bw_gbps": 68.14
+      "eff_bw_gbps": 68.18
     },
     {
       "name": "up_proj",
       "nrows": 12288,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 3095.5,
-      "us_per_call": 96.73,
+      "us_per_token": 3093.9,
+      "us_per_call": 96.68,
       "weight_mb": 6.75,
-      "eff_bw_gbps": 68.14
+      "eff_bw_gbps": 68.18
     },
     {
       "name": "down_proj",
       "nrows": 4096,
       "ncols": 12288,
       "count": 32,
-      "us_per_token": 2952.2,
-      "us_per_call": 92.26,
+      "us_per_token": 2951.7,
+      "us_per_call": 92.24,
       "weight_mb": 6.75,
-      "eff_bw_gbps": 71.45
+      "eff_bw_gbps": 71.46
     },
     {
       "name": "lm_head",
       "nrows": 151669,
       "ncols": 4096,
       "count": 1,
-      "us_per_token": 1147.6,
-      "us_per_call": 1147.59,
+      "us_per_token": 1147.4,
+      "us_per_call": 1147.37,
       "weight_mb": 83.31,
-      "eff_bw_gbps": 70.9
+      "eff_bw_gbps": 70.91
     }
   ],
   "summary": {
-    "us_per_token": 13216.1,
-    "equiv_tps": 75.67,
+    "us_per_token": 13261.6,
+    "equiv_tps": 75.41,
     "total_weight_mb": 911.31
   }
 }

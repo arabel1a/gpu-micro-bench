@@ -88,6 +88,20 @@ def _hu(name, ptx, asm, init, min_sm=0, cat="fp16x2"):
     """FP16x2 (packed u32) unary"""
     return Insn(name, ptx, asm, "unsigned", "r", init, [], min_sm, cat)
 
+def _db(name, ptx, asm, init, k, min_sm=0, cat="fp64"):
+    """FP64 binary: op %0, %0, %1"""
+    return Insn(name, ptx, asm, "double", "d", init,
+                [("double", "k0", k)], min_sm, cat)
+
+def _du(name, ptx, asm, init, min_sm=0, cat="fp64"):
+    """FP64 unary: op %0, %0"""
+    return Insn(name, ptx, asm, "double", "d", init, [], min_sm, cat)
+
+def _dt(name, ptx, asm, init, k, min_sm=0, cat="fp64"):
+    """FP64 ternary (fma-style): op %0, %0, %1, %0"""
+    return Insn(name, ptx, asm, "double", "d", init,
+                [("double", "k0", k)], min_sm, cat)
+
 
 # ============================================================================
 # Code generation
@@ -230,7 +244,7 @@ struct Test {
     void* tput;
     void* lat;
     int min_sm;
-    char out_type;   // 'f'=float, 'i'=int, 'u'=unsigned, 's'=unsigned short
+    char out_type;   // 'f'=float, 'i'=int, 'u'=unsigned, 's'=unsigned short, 'd'=double
 };
 
 template<typename T>
@@ -265,7 +279,7 @@ float bench_kernel(void* fn_ptr, T* d_out, int n_iters, int n_warmup, int n_reps
     parts.append("Test tests[] = {")
     for insn in instructions:
         otype = {'float': 'f', 'int': 'i', 'unsigned': 'u',
-                 'unsigned short': 's'}[insn.ctype]
+                 'unsigned short': 's', 'double': 'd'}[insn.ctype]
         sm = insn.min_sm if insn.min_sm > 0 else 75
         parts.append(f'    {{"{insn.name}", (void*)kern_{insn.name}_tput, '
                      f'(void*)kern_{insn.name}_lat, {sm}, \'{otype}\'}},')
@@ -320,6 +334,7 @@ int main(int argc, char** argv) {
                 case 'i': avg_ms = bench_kernel<int>(   fn, (int*)d_buf,   n_iters, n_warmup, n_reps); break;
                 case 'u': avg_ms = bench_kernel<unsigned>(fn, (unsigned*)d_buf, n_iters, n_warmup, n_reps); break;
                 case 's': avg_ms = bench_kernel<unsigned short>(fn, (unsigned short*)d_buf, n_iters, n_warmup, n_reps); break;
+                case 'd': avg_ms = bench_kernel<double>(fn, (double*)d_buf, n_iters, n_warmup, n_reps); break;
             }
 
             double total_ns = avg_ms * 1e6;
@@ -363,6 +378,9 @@ def get_sass_counts(binary: Path) -> dict:
     cur_arch = None
     cur_kern = None
     counts = {}
+    # Match kernel name (snake_case) up to start of C++-mangled param types
+    # (which begin with uppercase). e.g. "_Z..kern_f64_abs_latPVdi" -> "f64_abs_lat"
+    name_pat = re.compile(r"kern_([a-z0-9_]+)")
 
     for line in result.stdout.split("\n"):
         m = arch_pat.search(line)
@@ -372,12 +390,12 @@ def get_sass_counts(binary: Path) -> dict:
         m = kernel_pat.search(line)
         if m:
             cur_kern = m.group(1)
-            km = re.search(r"kern_(\w+)", cur_kern)
+            km = name_pat.search(cur_kern)
             if km and cur_arch:
                 counts[(cur_arch, km.group(1))] = 0
             continue
         if cur_kern and cur_arch and insn_pat.search(line):
-            km = re.search(r"kern_(\w+)", cur_kern)
+            km = name_pat.search(cur_kern)
             if km:
                 counts[(cur_arch, km.group(1))] += 1
 
@@ -394,17 +412,19 @@ def verify_sass(binary: Path, instructions: list[Insn]) -> bool:
     min_expected = 50
     for insn in instructions:
         for suffix in ["tput", "lat"]:
-            found = False
-            for (arch, kname), count in counts.items():
-                if kname == f"{insn.name}_{suffix}":
-                    found = True
-                    if count < min_expected:
-                        print(f"WARNING: kern_{insn.name}_{suffix} (sm_{arch}) has only {count} "
-                              f"SASS instructions (expected >>{min_expected}).",
-                              file=sys.stderr)
-                        ok = False
-                    break
-            # Not found is OK — might be __CUDA_ARCH__ guarded
+            kname = f"{insn.name}_{suffix}"
+            for (arch, k), count in counts.items():
+                if k != kname:
+                    continue
+                # Skip archs below the op's min_sm — kernel body is __CUDA_ARCH__-guarded
+                if insn.min_sm and arch < insn.min_sm:
+                    continue
+                if count < min_expected:
+                    print(f"WARNING: kern_{kname} (sm_{arch}) has only {count} "
+                          f"SASS instructions (expected >>{min_expected}). "
+                          f"Likely constant-folded by ptxas.",
+                          file=sys.stderr)
+                    ok = False
     return ok
 
 

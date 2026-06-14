@@ -1,0 +1,118 @@
+{
+  "gpu": {
+    "name": "NVIDIA Graphics Device",
+    "sm": "sm_80",
+    "n_sms": 70,
+    "l2_kb": 32768
+  },
+  "tests": [
+    {
+      "op": "mma_m16n8k16_f16f16f32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 145345031.7,
+      "ns_per_op": 181.681,
+      "ops_per_ns": 0.0055,
+      "wall_ms": 7267.3
+    },
+    {
+      "op": "mma_m16n8k16_f16f16f32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 145269760.1,
+      "ns_per_op": 181.587,
+      "ops_per_ns": 0.0055,
+      "wall_ms": 7263.5
+    },
+    {
+      "op": "mma_m16n8k16_bf16bf16f32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 145345779.4,
+      "ns_per_op": 181.682,
+      "ops_per_ns": 0.0055,
+      "wall_ms": 7267.3
+    },
+    {
+      "op": "mma_m16n8k16_bf16bf16f32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 145273391.7,
+      "ns_per_op": 181.592,
+      "ops_per_ns": 0.0055,
+      "wall_ms": 7263.7
+    },
+    {
+      "op": "mma_m16n8k8_tf32tf32f32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 145340744.0,
+      "ns_per_op": 181.676,
+      "ops_per_ns": 0.0055,
+      "wall_ms": 7267.0
+    },
+    {
+      "op": "mma_m16n8k8_tf32tf32f32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 145271057.1,
+      "ns_per_op": 181.589,
+      "ops_per_ns": 0.0055,
+      "wall_ms": 7263.6
+    },
+    {
+      "op": "mma_m16n8k32_s8s8s32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 145338775.6,
+      "ns_per_op": 181.673,
+      "ops_per_ns": 0.0055,
+      "wall_ms": 7266.9
+    },
+    {
+      "op": "mma_m16n8k32_s8s8s32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 145272689.8,
+      "ns_per_op": 181.591,
+      "ops_per_ns": 0.0055,
+      "wall_ms": 7263.6
+    },
+    {
+      "op": "mma_m16n8k32_u8u8s32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 145342788.7,
+      "ns_per_op": 181.678,
+      "ops_per_ns": 0.0055,
+      "wall_ms": 7267.1
+    },
+    {
+      "op": "mma_m16n8k32_u8u8s32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 145272583.0,
+      "ns_per_op": 181.591,
+      "ops_per_ns": 0.0055,
+      "wall_ms": 7263.6
+    },
+    {
+      "op": "mma_m8n8k4_f64",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 581078064.0,
+      "ns_per_op": 726.348,
+      "ops_per_ns": 0.0014,
+      "wall_ms": 29053.9
+    },
+    {
+      "op": "mma_m8n8k4_f64",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 581060730.0,
+      "ns_per_op": 726.326,
+      "ops_per_ns": 0.0014,
+      "wall_ms": 29053.0
+    }
+  ]
+}

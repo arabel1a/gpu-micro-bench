@@ -1,0 +1,7 @@
+_target_: run.run_arithm
+name: ctrl
+binary: ./bin/ctrl_bench
+
+n_iters: 100000
+n_warmup: 10
+n_reps: 50

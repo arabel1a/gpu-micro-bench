@@ -5,7 +5,7 @@ FLAGS = -O3 $(GENCODE) -Xcompiler -fopenmp -lgomp
 
 SRC = memtest mmvq_bench arithmtest arithmtest_gen
 
-all: $(addprefix bin/,$(SRC)) bin/mmvq_bench_nodp4a bin/mmvq_bench_dp2a ptx
+all: $(addprefix bin/,$(SRC)) bin/mmvq_bench_nodp4a bin/mmvq_bench_dp2a_prmt bin/mmvq_bench_dp2a_wide ptx
 
 # ---- binaries ----
 bin/%: src/%.cu | bin
@@ -14,8 +14,13 @@ bin/%: src/%.cu | bin
 bin/mmvq_bench_nodp4a: src/mmvq_bench.cu | bin
 	$(NVCC) $(FLAGS) -DDISABLE_DP4A -o $@ $<
 
-bin/mmvq_bench_dp2a: src/mmvq_bench.cu | bin
-	$(NVCC) $(FLAGS) -DDP4A_REPL_DP2A -o $@ $<
+# old mmvq_bench_dp2a (-DDP4A_REPL_DP2A) removed: its int8->int16 repack was
+# numerically wrong (packed two s8 into one s16 lane). Replaced by:
+bin/mmvq_bench_dp2a_prmt: src/mmvq_bench.cu | bin
+	$(NVCC) $(FLAGS) -DDP2A_PRMT -o $@ $<
+
+bin/mmvq_bench_dp2a_wide: src/mmvq_bench.cu | bin
+	$(NVCC) $(FLAGS) -DDP2A_WIDE_ACT -o $@ $<
 
 # ---- PTX targets ----
 # Generate explicit rules for each (source, arch) pair

@@ -1,0 +1,7 @@
+_target_: run.run_arithm
+name: arithm2
+binary: ./bin/arithm2_bench
+
+n_iters: 100000
+n_warmup: 10
+n_reps: 50

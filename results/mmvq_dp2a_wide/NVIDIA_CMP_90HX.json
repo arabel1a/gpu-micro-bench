@@ -1,9 +1,9 @@
 {
   "gpu": {
-    "name": "NVIDIA GeForce RTX 2080 SUPER",
-    "sm": "sm_75",
-    "n_sms": 48,
-    "l2_kb": 4096
+    "name": "NVIDIA CMP 90HX",
+    "sm": "sm_86",
+    "n_sms": 50,
+    "l2_kb": 2560
   },
   "layers": [
     {
@@ -11,85 +11,85 @@
       "nrows": 4096,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 640.5,
-      "us_per_call": 20.02,
+      "us_per_token": 670.5,
+      "us_per_call": 20.95,
       "weight_mb": 2.25,
-      "eff_bw_gbps": 109.78
+      "eff_bw_gbps": 104.86
     },
     {
       "name": "k_proj",
       "nrows": 1024,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 211.1,
-      "us_per_call": 6.6,
+      "us_per_token": 224.1,
+      "us_per_call": 7.0,
       "weight_mb": 0.56,
-      "eff_bw_gbps": 83.28
+      "eff_bw_gbps": 78.43
     },
     {
       "name": "v_proj",
       "nrows": 1024,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 211.1,
-      "us_per_call": 6.6,
+      "us_per_token": 224.1,
+      "us_per_call": 7.0,
       "weight_mb": 0.56,
-      "eff_bw_gbps": 83.28
+      "eff_bw_gbps": 78.43
     },
     {
       "name": "o_proj",
       "nrows": 4096,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 634.0,
-      "us_per_call": 19.81,
+      "us_per_token": 647.7,
+      "us_per_call": 20.24,
       "weight_mb": 2.25,
-      "eff_bw_gbps": 110.9
+      "eff_bw_gbps": 108.55
     },
     {
       "name": "gate_proj",
       "nrows": 12288,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 1721.2,
-      "us_per_call": 53.79,
+      "us_per_token": 1793.7,
+      "us_per_call": 56.05,
       "weight_mb": 6.75,
-      "eff_bw_gbps": 122.55
+      "eff_bw_gbps": 117.6
     },
     {
       "name": "up_proj",
       "nrows": 12288,
       "ncols": 4096,
       "count": 32,
-      "us_per_token": 1509.3,
-      "us_per_call": 47.17,
+      "us_per_token": 1793.5,
+      "us_per_call": 56.05,
       "weight_mb": 6.75,
-      "eff_bw_gbps": 139.76
+      "eff_bw_gbps": 117.61
     },
     {
       "name": "down_proj",
       "nrows": 4096,
       "ncols": 12288,
       "count": 32,
-      "us_per_token": 1406.9,
-      "us_per_call": 43.97,
+      "us_per_token": 1791.1,
+      "us_per_call": 55.97,
       "weight_mb": 6.75,
-      "eff_bw_gbps": 149.93
+      "eff_bw_gbps": 117.77
     },
     {
       "name": "lm_head",
       "nrows": 151669,
       "ncols": 4096,
       "count": 1,
-      "us_per_token": 560.0,
-      "us_per_call": 559.99,
+      "us_per_token": 655.9,
+      "us_per_call": 655.94,
       "weight_mb": 83.31,
-      "eff_bw_gbps": 145.29
+      "eff_bw_gbps": 124.04
     }
   ],
   "summary": {
-    "us_per_token": 6894.1,
-    "equiv_tps": 145.05,
+    "us_per_token": 7800.8,
+    "equiv_tps": 128.19,
     "total_weight_mb": 911.31
   }
 }

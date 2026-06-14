@@ -1,0 +1,388 @@
+{
+  "gpu": {
+    "name": "NVIDIA Graphics Device",
+    "sm": "sm_80",
+    "n_sms": 70,
+    "l2_kb": 32768
+  },
+  "tests": [
+    {
+      "op": "f64_add",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 9440890.3,
+      "ns_per_op": 11.801,
+      "ops_per_ns": 0.0847,
+      "wall_ms": 472.0
+    },
+    {
+      "op": "f64_add",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 75484375.0,
+      "ns_per_op": 94.355,
+      "ops_per_ns": 0.0106,
+      "wall_ms": 3774.2
+    },
+    {
+      "op": "f64_sub",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 9440870.3,
+      "ns_per_op": 11.801,
+      "ops_per_ns": 0.0847,
+      "wall_ms": 472.0
+    },
+    {
+      "op": "f64_sub",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 75480514.5,
+      "ns_per_op": 94.351,
+      "ops_per_ns": 0.0106,
+      "wall_ms": 3774.0
+    },
+    {
+      "op": "f64_mul",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 9439622.9,
+      "ns_per_op": 11.8,
+      "ops_per_ns": 0.0847,
+      "wall_ms": 472.0
+    },
+    {
+      "op": "f64_mul",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 75476028.4,
+      "ns_per_op": 94.345,
+      "ops_per_ns": 0.0106,
+      "wall_ms": 3773.8
+    },
+    {
+      "op": "f64_fma",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 9439744.9,
+      "ns_per_op": 11.8,
+      "ops_per_ns": 0.0847,
+      "wall_ms": 472.0
+    },
+    {
+      "op": "f64_fma",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 75474044.8,
+      "ns_per_op": 94.343,
+      "ops_per_ns": 0.0106,
+      "wall_ms": 3773.7
+    },
+    {
+      "op": "f64_min",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 9440011.0,
+      "ns_per_op": 11.8,
+      "ops_per_ns": 0.0847,
+      "wall_ms": 472.0
+    },
+    {
+      "op": "f64_min",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 75482437.1,
+      "ns_per_op": 94.353,
+      "ops_per_ns": 0.0106,
+      "wall_ms": 3774.1
+    },
+    {
+      "op": "f64_max",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 9440073.0,
+      "ns_per_op": 11.8,
+      "ops_per_ns": 0.0847,
+      "wall_ms": 472.0
+    },
+    {
+      "op": "f64_max",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 75478698.7,
+      "ns_per_op": 94.348,
+      "ops_per_ns": 0.0106,
+      "wall_ms": 3773.9
+    },
+    {
+      "op": "f64_div_rn",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 581098266.6,
+      "ns_per_op": 726.373,
+      "ops_per_ns": 0.0014,
+      "wall_ms": 29054.9
+    },
+    {
+      "op": "f64_div_rn",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 581064086.9,
+      "ns_per_op": 726.33,
+      "ops_per_ns": 0.0014,
+      "wall_ms": 29053.2
+    },
+    {
+      "op": "f64_rcp_rn",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 377343933.1,
+      "ns_per_op": 471.68,
+      "ops_per_ns": 0.0021,
+      "wall_ms": 18867.2
+    },
+    {
+      "op": "f64_rcp_rn",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 377351318.4,
+      "ns_per_op": 471.689,
+      "ops_per_ns": 0.0021,
+      "wall_ms": 18867.6
+    },
+    {
+      "op": "f64_sqrt_rn",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 603744506.8,
+      "ns_per_op": 754.681,
+      "ops_per_ns": 0.0013,
+      "wall_ms": 30187.2
+    },
+    {
+      "op": "f64_sqrt_rn",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 603744018.6,
+      "ns_per_op": 754.68,
+      "ops_per_ns": 0.0013,
+      "wall_ms": 30187.2
+    },
+    {
+      "op": "tf32_cvt_rna_add",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 2151320.7,
+      "ns_per_op": 2.689,
+      "ops_per_ns": 0.3719,
+      "wall_ms": 107.6
+    },
+    {
+      "op": "tf32_cvt_rna_add",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 16070558.5,
+      "ns_per_op": 20.088,
+      "ops_per_ns": 0.0498,
+      "wall_ms": 803.5
+    },
+    {
+      "op": "setp_selp_lt_s32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 324997.1,
+      "ns_per_op": 0.406,
+      "ops_per_ns": 2.4616,
+      "wall_ms": 16.2
+    },
+    {
+      "op": "setp_selp_lt_s32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 2417275.2,
+      "ns_per_op": 3.022,
+      "ops_per_ns": 0.331,
+      "wall_ms": 120.9
+    },
+    {
+      "op": "setp_selp_lt_f32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 320552.9,
+      "ns_per_op": 0.401,
+      "ops_per_ns": 2.4957,
+      "wall_ms": 16.0
+    },
+    {
+      "op": "setp_selp_lt_f32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 2399763.6,
+      "ns_per_op": 3.0,
+      "ops_per_ns": 0.3334,
+      "wall_ms": 120.0
+    },
+    {
+      "op": "slct_s32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 635412.6,
+      "ns_per_op": 0.794,
+      "ops_per_ns": 1.259,
+      "wall_ms": 31.8
+    },
+    {
+      "op": "slct_s32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 4775733.0,
+      "ns_per_op": 5.97,
+      "ops_per_ns": 0.1675,
+      "wall_ms": 238.8
+    },
+    {
+      "op": "vadd2_u32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 1388911.8,
+      "ns_per_op": 1.736,
+      "ops_per_ns": 0.576,
+      "wall_ms": 69.4
+    },
+    {
+      "op": "vadd2_u32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 10343157.8,
+      "ns_per_op": 12.929,
+      "ops_per_ns": 0.0773,
+      "wall_ms": 517.2
+    },
+    {
+      "op": "vsub2_u32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 351621.1,
+      "ns_per_op": 0.44,
+      "ops_per_ns": 2.2752,
+      "wall_ms": 17.6
+    },
+    {
+      "op": "vsub2_u32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 10325605.4,
+      "ns_per_op": 12.907,
+      "ops_per_ns": 0.0775,
+      "wall_ms": 516.3
+    },
+    {
+      "op": "vadd4_u32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 1158491.8,
+      "ns_per_op": 1.448,
+      "ops_per_ns": 0.6906,
+      "wall_ms": 57.9
+    },
+    {
+      "op": "vadd4_u32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 6992342.0,
+      "ns_per_op": 8.74,
+      "ops_per_ns": 0.1144,
+      "wall_ms": 349.6
+    },
+    {
+      "op": "vsub4_u32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 280637.3,
+      "ns_per_op": 0.351,
+      "ops_per_ns": 2.8507,
+      "wall_ms": 14.0
+    },
+    {
+      "op": "vsub4_u32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 6992404.0,
+      "ns_per_op": 8.741,
+      "ops_per_ns": 0.1144,
+      "wall_ms": 349.6
+    },
+    {
+      "op": "vabsdiff2_u32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 2576998.9,
+      "ns_per_op": 3.221,
+      "ops_per_ns": 0.3104,
+      "wall_ms": 128.8
+    },
+    {
+      "op": "vabsdiff2_u32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 19705822.0,
+      "ns_per_op": 24.632,
+      "ops_per_ns": 0.0406,
+      "wall_ms": 985.3
+    },
+    {
+      "op": "vabsdiff4_u32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 320655.3,
+      "ns_per_op": 0.401,
+      "ops_per_ns": 2.4949,
+      "wall_ms": 16.0
+    },
+    {
+      "op": "vabsdiff4_u32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 2488381.4,
+      "ns_per_op": 3.11,
+      "ops_per_ns": 0.3215,
+      "wall_ms": 124.4
+    },
+    {
+      "op": "vmin_s32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 1406566.3,
+      "ns_per_op": 1.758,
+      "ops_per_ns": 0.5688,
+      "wall_ms": 70.3
+    },
+    {
+      "op": "vmin_s32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 10343321.8,
+      "ns_per_op": 12.929,
+      "ops_per_ns": 0.0773,
+      "wall_ms": 517.2
+    },
+    {
+      "op": "vmax_s32",
+      "mode": "tput",
+      "n_iters": 100000,
+      "total_ns": 1406853.1,
+      "ns_per_op": 1.759,
+      "ops_per_ns": 0.5686,
+      "wall_ms": 70.3
+    },
+    {
+      "op": "vmax_s32",
+      "mode": "lat",
+      "n_iters": 100000,
+      "total_ns": 10343566.9,
+      "ns_per_op": 12.929,
+      "ops_per_ns": 0.0773,
+      "wall_ms": 517.2
+    }
+  ]
+}

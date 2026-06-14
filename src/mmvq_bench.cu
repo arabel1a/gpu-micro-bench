@@ -10,6 +10,7 @@
 //   LAYER,<name>,<nrows>,<ncols>,<count>,<total_us>,<per_call_us>,<weight_mb>,<eff_bw_gbps>
 //   SUMMARY,<us_per_token>,<equiv_tps>,<total_weight_mb>
 
+#include <cmath>
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
@@ -33,11 +34,23 @@ struct block_q1_0_g128 {
 };  // 18 bytes total
 static_assert(sizeof(block_q1_0_g128) == 18, "wrong q1_0_g128 block size");
 
+#if defined(DP2A_WIDE_ACT)
+// Activations pre-widened to int16 so they can sit in dp2a's 16-bit operand
+// slot (srcA); the weights stay in the 8-bit slot (srcB) — weight bytes loaded
+// per token are UNCHANGED. Activation block grows 36 -> 68 bytes, but the
+// activation vector is broadcast to every output row and lives in L2.
+struct block_q8_1 {
+    half2 ds;                      // delta + sum (4 bytes)
+    int16_t qs[QK8_1];            // quants widened to 16-bit (64 bytes)
+};  // 68 bytes total
+static_assert(sizeof(block_q8_1) == 68, "wrong widened q8_1 block size");
+#else
 struct block_q8_1 {
     half2 ds;                      // delta + sum (4 bytes)
     int8_t qs[QK8_1];             // quants (32 bytes)
 };  // 36 bytes total
 static_assert(sizeof(block_q8_1) == 36, "wrong q8_1 block size");
+#endif
 
 // ============================================================================
 // Device helpers — exact copies from llama.cpp
@@ -56,21 +69,24 @@ static __device__ __forceinline__ int get_int_b4(const void * x, const int & i32
 //     return c + a8[0]*b8[0] + a8[1]*b8[1] + a8[2]*b8[2] + a8[3]*b8[3];
 // #endif
 // }
+// NOTE: the old DP4A_REPL_DP2A variant (removed) was numerically WRONG:
+// `a_lo = a0 | (a1 << 8)` packed two s8 into one 16-bit lane instead of
+// sign-extending each s8 into its own lane, so dp2a multiplied garbage.
+// DP2A_PRMT below is the correct in-register repack.
 static __device__ __forceinline__ int ggml_cuda_dp4a(const int a, const int b, int c) {
-#if defined(DP4A_REPL_DP2A)
-    int8_t a0 = (int8_t)(a >> 0);
-    int8_t a1 = (int8_t)(a >> 8);
-    int8_t a2 = (int8_t)(a >> 16);
-    int8_t a3 = (int8_t)(a >> 24);
-
-    int16_t a_lo = (int16_t)a0 | ((int16_t)a1 << 8);
-    int16_t a_hi = (int16_t)a2 | ((int16_t)a3 << 8);
-    int32_t a_packed = ((int32_t)a_hi << 16) | (uint32_t)a_lo;
-
-    int part_lo = __dp2a_lo(a_packed, b, c);
-    int part_hi = __dp2a_hi(a_packed, b, 0);
-    return part_lo + part_hi;
-
+#if defined(DP2A_PRMT)
+    // Throttled DP4A (s8x4 · s8x4) -> 2x PRMT + 2x DP2A, all unthrottled on CMP.
+    // prmt.b32 with the nibble msb set replicates the sign bit of the selected
+    // byte across the destination byte, i.e. sign-extends s8 -> s16 in place:
+    //   0x9180: d = [a.b0, sext(a.b0), a.b1, sext(a.b1)] = (s16)a0 | (s16)a1 << 16
+    //   0xB3A2: d = [a.b2, sext(a.b2), a.b3, sext(a.b3)] = (s16)a2 | (s16)a3 << 16
+    // Memory traffic is unchanged — widening happens in registers.
+    int a01, a23;
+    asm("prmt.b32 %0, %1, 0, 0x9180;" : "=r"(a01) : "r"(a));
+    asm("prmt.b32 %0, %1, 0, 0xB3A2;" : "=r"(a23) : "r"(a));
+    c = __dp2a_lo(a01, b, c);   // a0*b0 + a1*b1 + c
+    c = __dp2a_hi(a23, b, c);   // a2*b2 + a3*b3 + c
+    return c;
 #elif (__CUDA_ARCH__ >= 610) && !defined(DISABLE_DP4A)
     return __dp4a(a, b, c);
 #else
@@ -121,8 +137,17 @@ static __device__ __forceinline__ float vec_dot_q1_0_g128_q8_1(
     int sumi = 0;
 #pragma unroll
     for (int j = 0; j < 8; ++j) {
+#if defined(DP2A_WIDE_ACT)
+        // Pure dp2a: srcA = pre-widened s16 activations, srcB = s8 weights.
+        // No conversion instructions, no extra weight bytes.
+        const int u01 = get_int_b4(bq8_1_chunk->qs, 2*j + 0);  // (s16)u0 | (s16)u1 << 16
+        const int u23 = get_int_b4(bq8_1_chunk->qs, 2*j + 1);  // (s16)u2 | (s16)u3 << 16
+        sumi = __dp2a_lo(u01, vi_bytes[j], sumi);  // u0*w0 + u1*w1
+        sumi = __dp2a_hi(u23, vi_bytes[j], sumi);  // u2*w2 + u3*w3
+#else
         const int u = get_int_b4(bq8_1_chunk->qs, j);
         sumi = ggml_cuda_dp4a(vi_bytes[j], u, sumi);
+#endif
     }
 
     const float2 ds8f = __half22float2(bq8_1_chunk->ds);
@@ -213,6 +238,55 @@ static void fill_random(void *buf, size_t bytes) {
     for (size_t i = 0; i < bytes; i++) p[i] = rand() & 0xFF;
 }
 
+// ============================================================================
+// Correctness check (MMVQ_CHECK=1): host reference for the full row dot.
+// In check mode all scales are forced to 1.0 and quants stay in int8 range,
+// so every partial sum is an integer < 2^24 — float math is exact and the
+// GPU result must match bit-for-bit regardless of summation order.
+// ============================================================================
+
+static void sanitize_for_check(void *h_weight, size_t weight_bytes,
+                               void *h_act, size_t act_bytes) {
+    auto *wb = (block_q1_0_g128 *)h_weight;
+    for (size_t i = 0; i < weight_bytes / sizeof(block_q1_0_g128); i++) {
+        wb[i].d = __float2half(1.0f);
+    }
+    auto *ab = (block_q8_1 *)h_act;
+    for (size_t i = 0; i < act_bytes / sizeof(block_q8_1); i++) {
+        ab[i].ds = __floats2half2_rn(1.0f, 1.0f);
+        for (int k = 0; k < QK8_1; k++) {
+            ab[i].qs[k] = (int8_t)(rand() & 0xFF);  // int8 range even when qs is int16
+        }
+    }
+}
+
+static float host_ref_row(const block_q1_0_g128 *wrow, const block_q8_1 *act, int ncols) {
+    float total = 0.0f;
+    for (int kbx = 0; kbx < ncols / QK1_0_g128; kbx++) {
+        const block_q1_0_g128 *bq = wrow + kbx;
+        const float d1 = __half2float(bq->d);
+        for (int iqs = 0; iqs < 4; iqs++) {
+            const block_q8_1 *a = act + kbx * (QK1_0_g128 / QK8_1) + iqs;
+            const int offset = iqs * 4;
+            const uint32_t v = (uint32_t)bq->qs[offset + 0]        |
+                              ((uint32_t)bq->qs[offset + 1] << 8)  |
+                              ((uint32_t)bq->qs[offset + 2] << 16) |
+                              ((uint32_t)bq->qs[offset + 3] << 24);
+            int sumi = 0;
+            for (int j = 0; j < 8; j++) {
+                const uint32_t bits4 = (v >> (j * 4)) & 0x0F;
+                for (int b = 0; b < 4; b++) {
+                    const int w = (bits4 & (1u << b)) ? 1 : -1;
+                    sumi += w * (int)a->qs[4 * j + b];
+                }
+            }
+            const float2 ds = __half22float2(a->ds);
+            total += d1 * ds.x * sumi;
+        }
+    }
+    return total;
+}
+
 static std::vector<Layer> parse_layers(const char *csv) {
     std::vector<Layer> layers;
     std::istringstream ss(csv);
@@ -279,15 +353,22 @@ int main(int argc, char **argv) {
     CHECK_CUDA(cudaMalloc(&d_act, act_bytes));
     CHECK_CUDA(cudaMalloc(&d_out, out_bytes));
 
+    const bool do_check = getenv("MMVQ_CHECK") && atoi(getenv("MMVQ_CHECK"));
+
     // Fill with random data on host, copy to device
     void *h_weight = malloc(max_weight_bytes);
     void *h_act = malloc(act_bytes);
     fill_random(h_weight, max_weight_bytes);
     fill_random(h_act, act_bytes);
+    if (do_check) {
+        sanitize_for_check(h_weight, max_weight_bytes, h_act, act_bytes);
+    }
     CHECK_CUDA(cudaMemcpy(d_weight, h_weight, max_weight_bytes, cudaMemcpyHostToDevice));
     CHECK_CUDA(cudaMemcpy(d_act, h_act, act_bytes, cudaMemcpyHostToDevice));
-    free(h_weight);
-    free(h_act);
+    if (!do_check) {
+        free(h_weight);
+        free(h_act);
+    }
 
     cudaEvent_t start, stop;
     CHECK_CUDA(cudaEventCreate(&start));
@@ -314,6 +395,26 @@ int main(int argc, char **argv) {
                 d_weight, d_act, d_out, l.ncols, blocks_per_row);
         }
         CHECK_CUDA(cudaDeviceSynchronize());
+
+        if (do_check) {
+            const int n_check = l.nrows < 16 ? l.nrows : 16;
+            std::vector<float> gpu_out(n_check);
+            CHECK_CUDA(cudaMemcpy(gpu_out.data(), d_out, n_check * sizeof(float),
+                                  cudaMemcpyDeviceToHost));
+            float max_diff = 0.0f;
+            for (int r = 0; r < n_check; r++) {
+                const block_q1_0_g128 *wrow =
+                    (const block_q1_0_g128 *)h_weight + (size_t)r * blocks_per_row;
+                const float ref = host_ref_row(wrow, (const block_q8_1 *)h_act, l.ncols);
+                const float diff = fabsf(ref - gpu_out[r]);
+                if (diff > max_diff) max_diff = diff;
+            }
+            printf("CHECK,%s,%d,%.6f,%s\n", l.name.c_str(), n_check, max_diff,
+                   max_diff == 0.0f ? "PASS" : "FAIL");
+            fflush(stdout);
+            fprintf(stderr, "  CHECK %-12s rows=%d max_diff=%.6f %s\n",
+                    l.name.c_str(), n_check, max_diff, max_diff == 0.0f ? "PASS" : "FAIL");
+        }
 
         // Benchmark: time n_reps "tokens", each token = n_calls kernel launches
         CHECK_CUDA(cudaEventRecord(start));
